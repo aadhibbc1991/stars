@@ -89,7 +89,7 @@
 		}
 
 		function processInput(name) {
-			var name = name.toLowerCase().strip();
+			var name = name.toLowerCase().trim();
 			scrollableDiv = document.getElementById('outputdiv');
     			scrollableDiv.scrollTop = 0;
 			if (name in vectorsAll) {
