@@ -12,7 +12,7 @@
 			font-size: 102%;
 			color: #DDDDDD;
 		}
-		input {
+		input, select {
 			background-color: #101010;
 			border: 1px solid grey;
 			border-radius: 50px;
@@ -31,8 +31,21 @@
 	</style>
 </head>
 <body>
-	<h2>Void Catalogue</h2><input id="inputbox" onchange="processInput(this.value)" style="width: 70%;"/>
+	<center>
+	<h2>Void Catalogue</h2><input id="inputbox" onchange="processInput(this.value)" style="width: 40%;"/>
+	<select id="sufix">
+		<option value=""> </option>
+		<option value="milf">Milf</option>
+		<option value="step+mom">StepMom</option>
+		<option value="mom+son">Mom Son</option>
+		<option value="lesbian">Lesbian</option>
+		<option value="threesome">Threesome</option>
+		<option value="gangbang">Gangbang</option>
+		<option value="bukkake">Bukkake</option>
+		<option value="gay">Gay</option>
+	</select>
 	<input value="Top" type="button" onclick="processInput(document.getElementById('inputbox').value)"/>
+	</center>
 	<div id="outputdiv" style="overflow-y: scroll; max-height: 85%"></div>
 	<script src="VoidVectorDataNew.js"></script>
 	<script type="text/javascript">
@@ -122,7 +135,7 @@
 					var val = d[k]*100;
 					var imgsrc = images[k];
 					if (val > 90) {
-						var outstr = outstr + '<div style="display: inline-block"><div class="words">NAME: '+k.toUpperCase()+'</div><div>MATCH SCORE: '+val.toFixed(2)+'%</div><div><img src="'+imgsrc+'" onclick="window.open(\'https://www-xvideos-com.translate.goog/?k='+k.replace(/ /g, "+")+'&_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')"/><br><input style="width: 49%;" type="button" value="XVIDEOS" onclick="window.open(\'https://www-xvideos-com.translate.goog/?k='+k.replace(/ /g, "+")+'&_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')"/><input style="width: 49%;" type="button" value="XHAMSTER" onclick="window.open(\'https://xhamster-com.translate.goog/search/'+k.replace(/ /g, "+")+'?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')"/></div></div>';
+						var outstr = outstr + '<div style="display: inline-block"><div class="words">NAME: '+k.toUpperCase()+'</div><div>MATCH SCORE: '+val.toFixed(2)+'%</div><div><img src="'+imgsrc+'" onclick="window.open(\'https://www-xvideos-com.translate.goog/?k='+k.replace(/ /g, "+")+'+\'+document.getElementById(\'sufix\').value+\'&_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')"/><br><input style="width: 49%;" type="button" value="XVIDEOS" onclick="window.open(\'https://www-xvideos-com.translate.goog/?k='+k.replace(/ /g, "+")+'+\'+document.getElementById(\'sufix\').value+\'&_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')"/><input style="width: 49%;" type="button" value="XHAMSTER" onclick="window.open(\'https://xhamster-com.translate.goog/search/'+k.replace(/ /g, "+")+'+\'+document.getElementById(\'sufix\').value+\'?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')"/></div></div>';
 					} else {
 						break;
 					}
