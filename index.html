@@ -183,6 +183,7 @@
 			console.log(namef)
 			if (namef == '') {var namef = findCorrectSpelling(name, collectionName);}
 			var name = findCorrectSpelling(name, collectionName);
+			var namef = '';
 			if (namef in vectorsAll) {
 				var inputVec = vectorsAll[namef];
 				var scores = cosineSimilarity(inputVec);
