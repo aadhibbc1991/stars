@@ -42,7 +42,7 @@
 <body onload="">
 	<center>
 	<h2>Void Catalogue</h2>
-	<br><input id="inputbox" onchange="processInput(this.value)" style="width: 40%;"/>
+	<input id="inputbox" onchange="processInput(this.value)" style="width: 40%;"/>
 	<select id="sufix">
 		<option value=""> </option>
 		<option value="milf">Milf</option>
@@ -57,7 +57,7 @@
 	<input value="Top" type="button" onclick="processInput(document.getElementById('inputbox').value)"/>
 	</center>
 	<div id="outputdiv" style="overflow-y: scroll; max-height: 85%; text-align: center; border-top: 1px solid gray; background-color: #101010"></div>
-	<script src="VoidVectorDataNew.js"></script>
+	<script src="MifFoxVoidData.js"></script>
 	<script type="text/javascript">
 
 		function findCorrectSpelling(givenWord, collection) {
@@ -109,7 +109,7 @@
 		  }, {});
 		}
 
-		vectorsAll = lowercaseKeys(vectors());
+		vectorsAll = lowercaseKeys(voidVector());
 		images = lowercaseKeys(nameImages());
 		collectionName = Object.getOwnPropertyNames(images);
 
@@ -144,7 +144,7 @@
 				if (k in d) {
 					var val = d[k]*100;
 					var imgsrc = images[k];
-					if (val > 90) {
+					if (val > 50) {
 						var outstr = outstr + '<div style="display: inline-block">';
 						var outstr = outstr + '<div class="words">NAME: '+k.toUpperCase()+'</div>';
 						var outstr = outstr + '<div class="words">SCORE: '+val.toFixed(2)+'%</div>';
