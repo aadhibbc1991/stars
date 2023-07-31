@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Void Catalogue V-M0.2</title>
+	<title>Void Catalogue</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style type="text/css">
 		html, body {
@@ -38,7 +38,26 @@
 			margin: 10px;
 		}
 	</style>
-	<script src="MifFoxVoidData.js"></script>
+</head>
+<body onload="">
+	<center>
+	<h2>Void Catalogue</h2>
+	<input id="inputbox" onchange="processInput(this.value)" style="width: 40%;"/>
+	<select id="sufix">
+		<option value=""> </option>
+		<option value="milf">Milf</option>
+		<option value="step+mom">StepMom</option>
+		<option value="mom+son">MomSon</option>
+		<option value="lesbian">Lesbian</option>
+		<option value="threesome">Threesome</option>
+		<option value="gangbang">Gangbang</option>
+		<option value="bukkake">Bukkake</option>
+		<option value="gay">Gay</option>
+	</select>
+	<input value="Top" type="button" onclick="processInput(document.getElementById('inputbox').value)"/>
+	</center>
+	<div id="outputdiv" style="overflow-y: scroll; max-height: 85%; text-align: center; border-top: 1px solid gray; background-color: #101010"></div>
+	<script src="VoidVectorDataNew.js"></script>
 	<script type="text/javascript">
 
 		function findCorrectSpelling(givenWord, collection) {
@@ -90,7 +109,7 @@
 		  }, {});
 		}
 
-		vectorsAll = lowercaseKeys(voidVector());
+		vectorsAll = lowercaseKeys(vectors());
 		images = lowercaseKeys(nameImages());
 		collectionName = Object.getOwnPropertyNames(images);
 
@@ -188,24 +207,5 @@
 			} else {alert('name not found!!!')}
 		}
 	</script>
-</head>
-<body onload="">
-	<center>
-	<h2>Void Catalogue</h2>
-	<input id="inputbox" onchange="processInput(this.value)" style="width: 40%;"/>
-	<select id="sufix">
-		<option value=""> </option>
-		<option value="milf">Milf</option>
-		<option value="step+mom">StepMom</option>
-		<option value="mom+son">MomSon</option>
-		<option value="lesbian">Lesbian</option>
-		<option value="threesome">Threesome</option>
-		<option value="gangbang">Gangbang</option>
-		<option value="bukkake">Bukkake</option>
-		<option value="gay">Gay</option>
-	</select>
-	<input value="Top" type="button" onclick="processInput(document.getElementById('inputbox').value)"/>
-	</center>
-	<div id="outputdiv" style="overflow-y: scroll; max-height: 85%; text-align: center; border-top: 1px solid gray; background-color: #101010"></div>
 </body>
 </html>
