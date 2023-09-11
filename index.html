@@ -2,7 +2,7 @@
 <!-- saved from url=(0014)about:internet -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
-	<title>Void Catalogue V-2.6-Lim-30</title>
+	<title>Void Catalogue V-2.7-Lim-30</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style type="text/css">
 		html, body {
@@ -303,8 +303,13 @@
 			var name = name.toLowerCase();
 			var namef = findName(name, collectionName);
 			// var namef = '';
-			console.log(namef)
+			console.log('\nAfter Find Name namef:')
+			console.log('"'+namef+'"')
+			
 			if (namef == '') {var namef = findCorrectSpelling(name, collectionName);}
+			console.log('\nAfter Correct Spelling Name namef:')
+			console.log('"'+namef+'"')
+			
 			if (namef in vectorsAll) {
 				var inputVec = vectorsAll[namef];
 				var scores = cosineSimilarity(inputVec);
