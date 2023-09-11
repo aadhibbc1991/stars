@@ -2,7 +2,7 @@
 <!-- saved from url=(0014)about:internet -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
-	<title>Void Catalogue V-2.4-Lim-30</title>
+	<title>Void Catalogue V-2.5-Lim-30</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style type="text/css">
 		html, body {
@@ -280,6 +280,10 @@
 						var score = score + 1;
 					}
 				}
+
+				var score = score/collectionName[c].split(" ").length
+				var score = score/collectionName[c].length
+				
 				if (score > highscore) {
 					var highscore = score;
 					var finalname = collectionName[c];
