@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <!-- saved from url=(0014)about:internet -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
-	<title>VoidStars4U V1</title>
+	<meta name="google-site-verification" content="4wKNuHtFJ-JoWYIVzuI6X5-4IVOAdMO4r6DZEDjIL80">
+	<meta name="msvalidate.01" content="3F68EDCC5680D3D2228AD558D1DA07D7">
+	<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;%F0%9F%94%A5&lt;/text&gt;&lt;/svg&gt;">
+	<title>Void Stars</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style type="text/css">
 		html, body {
@@ -14,6 +16,20 @@
 			/*color: #DDDDDD;*/
 			padding: 0px;
 			margin: 0px;
+			background-image: url('https://img.freepik.com/free-photo/black-concrete-wall_24972-1046.jpg');
+			background-position: center;
+			background-size: cover;
+			color: white;
+		}
+		button {
+			font-family: sans-serif;
+			font-size: 105%;
+			/* width: 20%; */
+			background-color: rgba(225, 225, 225, 0.3);
+			color: white;
+		}
+		option {
+			color: black;
 		}
 		input, select {
 			/*background-color: #101010;*/
@@ -25,6 +41,8 @@
 			box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 			margin-bottom: 10px;
 			padding-left: 14px;
+			background-color: rgba(225, 225, 225, 0.3);
+			color: white;
 		}
 		div {
 			margin: 2px;
@@ -36,7 +54,7 @@
 			text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 			display: inline-block;
 		}
-		img {
+		img, .icondiv {
 			box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 			border: 1px solid white;
 			margin: 0px;
@@ -46,6 +64,15 @@
 /*     			cursor:grab/pointer; */
     			cursor:pointer;
 		}
+		.icondiv:hover {
+			cursor:pointer;
+		}
+		.suggestions {
+			padding: 3px;
+			margin: 3px;
+			border-top: 1px solid gray;
+			overflow-x: auto;
+		}
 		.out {
 			/*overflow-y: scroll; */
 			max-height: 85%; 
@@ -53,30 +80,92 @@
 			border-top: 1px solid gray; 
 			/*background-color: #101010*/
 		}
+		td, tr {
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+		.sitebtn {
+			border: 0px;
+			border-radius: 50%;
+			/* width: auto; */
+			/* height: 100px; */
+			height: 60px;
+			width: 60px;
+			background-color: white;
+			margin: 4px;
+		}
+		#sitescontainer2 {
+			position: fixed;
+			bottom: 75px;
+		}
+		.suggestionwords {
+			font-size: 100%;
+			width: 45px;
+		}
+		
+#pattern-lock-container {
+  width: 300px;
+  height: 300px;
+  border: 2px solid #333;
+  position: relative;
+}
+
+#pattern-draw {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pattern-dot {
+  width: 50px;
+  height: 50px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.siteimgs {
+	height: 40px;
+	width: 160px;
+	border-radius: 5px;
+	background-color: rgba(225, 225, 225, 0.5);
+
+}
 	</style>
 </head>
-<!-- <body onload="processInput('')"> -->
-<body onload="window.location.href = 'https://voidstars.vercel.app'">
+<body onload="processInput('')">
 <!-- 	<form> -->
 	<center>
-	<h2><a style="font-size: 200%;">🔥</a><u>Stars4U</u></h2>
-	<!-- <input type="search" id="inputbox" onchange="updateUrl()" style="width: 40%;"> -->
-	<input type="search" id="inputbox" style="width: 40%;">
-	<select id="sufix">
+<div style="display: none;">
+	This site is a Recomender System on Pornstars and Celebrities Based on your likes and favorites. Also lets you search for videos and pics on top site.
+</div>
+
+<div id="mainBody" style="display: none;">
+<!-- 	<h2><a style="font-size: 200%;">🔥</a><u>Stars4U</u></h2> -->
+	<h2><a style="font-size: 200%;">🔥</a>Stars4U</h2>
+	<input type="search" id="inputbox" style="width: 375px;" placeholder="Search Query...">
+	<select id="sufix" placeholder="channels" onchange="updateUrl()">
 		<option value=""></option>
-		<!-- <option value=""><a style="color: grey;">~~~~~Family~~~~~</a></option>
+		<option value="mom">Mom</option>
+		<option value="aunt">Aunt</option>
+		<option value="stepmom">Stepmom</option>
+		<option value="step+aunt">Step aunt</option>
+		<option value="mothers+day">Mothers Day</option>
+		<option value="mom+swap">Mom Swap</option>
+		<option value="mom+son">Mom Son</option>
+		<option value="mommys+boy">Mommys boy</option>
+		<option value="mommys+girl">Mommys Girl</option>
+		<option value="milf">Milfs</option>
+		<option value=""></option>
 		<option value="family">Family</option>
 		<option value="family+threesome">Family Threesome</option>
 		<option value="family+foursome">Family Foursome</option>
 		<option value="family+orgy">Family Orgy</option>
-		<option value=""></option>
-		<option value="milf">Milf</option>
-		<option value="mom">Mom</option>
-		<option value="stepmom">Stepmom</option>
-		<option value="mothers+day">Mothers Day</option>
-		<option value="mom+swap">Mom Swap</option>
-		<option value="mom+son">Mom Son</option>
-		<option value="mommys+girl">Mommys Girl</option>
 		<option value=""></option>
 		<option value="stepdad">Stepdad</option>
 		<option value="dad+daughter">Dad Daughter</option>
@@ -90,7 +179,21 @@
 		<option value="lesbian+threesome">Lesbian Threesome</option>
 		<option value="lesbian+foursome">Lesbian Foursome</option>
 		<option value="bukkake">Bukkake</option>
-		<option value="cum+facial">Cum Facial</option> -->
+		<option value="cum+facial">Cum Facial</option>
+		<option value="rimjob">Rimjob</option>
+		<option value="BDSM">BDSM</option>
+		<option value="FFM">FFM</option>
+		<option value="MMF">MMF</option>
+		<option value="public">Public</option>
+		<option value="double+penetration">DoublePenetration</option>
+		<option value="kinky">Kinky</option>
+		<option value=""> </option>
+		<option value="new+sensations">New Sensations</option>
+		<option value="bangbros">Bangbros</option>
+		<option value="dog+fart">Dog Fart</option>
+		<option value="brazzers">Brazzers</option>
+		<option value="live+gonzo">Live Gonzo</option>
+		<option value=""> </option>
 		<option value="Mom+Comes+First">Mom Comes First</option>
 		<option value="Mom+Is+Horny">Mom Is Horny</option>
 		<option value="Mom+Swap">Mom Swap</option>
@@ -134,42 +237,145 @@
 		<option value=" "> </option>
 		<option value="Inserted">Inserted</option>
 	</select>
-	<input value="Search Stars" type="button" onclick="updateUrl()"/>
-	<input value="Search Celebs" type="button" onclick="celebUpdateUrl()"/>
-	<input value="My Favorites" type="button" onclick="loadAllButtons('confdata', 'outputdiv')"/>
-	<textarea id="confdata" style="display: none;">
-		heather vahn mother's favor = https://www.fpo.xxx/videos/91444/heather-vahn-mother-s-favor/
-		heather vahn sleepover = https://noodlemagazine.com/watch/-161003282_456239077
-		krissy lynn stepmom shares a room = https://www.multi.xxx/videos/136591/stepmom-and-stepson-share-a-room-on-vacation-krissy-lynn/
-		bridgette b virgin son = https://txxx.com/videos/7513843/bridgette-b-takes-stepsons-virginity/?kt_lang=en
-		kathia nobili on the phone = https://mat6tube.com/watch/-143408597_456239019
-		danica dillon mothers day = https://noodlemagazine.com/watch/-167219025_456239568
-		lisa ann stepmom shares a room = https://spankbang.party/272l0/video/hotel+stepmom+and+sex
-		lisa ann classic mom = https://spankbang.com/65n0l/video/big+ass+milf+and+lazy+stepson
-		ariella ferrera mom under influence = https://noodlemagazine.com/watch/-209141133_456243753
-		ariella ferrera ad missy stepmom threesome = https://mat6tube.com/watch/-211925793_456239374
-		anna gold on couch = https://www.xnxx115.com/video-ky7i41/sex_with_s._girl_friend
-		aubrey black threesome with teens = https://noodlemagazine.com/watch/-34655362_456239726
-		brandi love selfie = https://txxx.com/videos/14901069/hot-mom-porn-video-featuring-cali-sparks-and-brandi-love/?kt_lang=en
-		pamela price stepmom = https://spankbang.party/2inty/video/stepmom
-		nicole aniston mom videos = https://www.fpo.xxx/videos/451339/nicole-aniston-mother-sex-xxx/
-		eva notty and janice griffith threesome = https://pornzog.com/video/13919871/janice-griffith-jessy-jones-and-eva-notty-es-enorme/
-	</textarea>
+	<!-- <select id="categoryid" onchange="if (this.value == 'celebrity') {celebUpdateUrl();}; if (this.value == 'pornstar') {updateUrl();}; if (this.value == 'random') {randomUpdateUrl();}; if (this.value == 'favorite') {favUpdateUrl();}"> -->
+	<select id="categoryid" onchange="updateUrl()">
+		<option value="celebrity">Celebrity</option>
+		<option value="pornstar">Pornstar</option>
+		<option value="favorite">Favorite</option>
+		<option value="random">Random</option>
+		<option value="website">Website</option>
+		<!-- <option value="website">Website</option> -->
+	</select>
+	<!-- <input type="button" value="Search" onclick="if (document.getElementById('categoryid').value == 'celebrity') {celebUpdateUrl();}; if (document.getElementById('categoryid').value == 'pornstar') {updateUrl();}; if (document.getElementById('categoryid').value == 'favorite') {favUpdateUrl();}; if (document.getElementById('categoryid').value == 'random') {randomUpdateUrl();}"/> -->
+	<input type="button" value="Search" onclick="updateUrl()">
+	<textarea id="confdata" style="display: none;">		ariella ferrera : ariella ferrera tasty stepmom = https://void-web-search-app.vercel.app/search/ariella+ferrera+tasty+stepmom
+		ariella ferrera : ariella ferrera horny guy spying on busty step mother = https://void-web-search-app.vercel.app/search/ariella+ferrera+horny+guy+spying+on+busty+step+mother
+		ariella ferrera : ariella ferrera better swallow some evidence = https://void-web-search-app.vercel.app/search/ariella+ferrera+better+swallow+some+evidence
+		ariella ferrera : ariella ferrera and missy my stepmom = https://void-web-search-app.vercel.app/search/ariella+ferrera+and+missy+my+stepmom
+		ariella ferrera : ariella ferrera threesome with sons best friends = https://void-web-search-app.vercel.app/search/ariella+ferrera+threesome+with+sons+best+friends
+		ariella ferrera : ariella ferrera stepmom under the influence = https://void-web-search-app.vercel.app/search/ariella+ferrera+stepmom+under+the+influence
+		ariella ferrera : ariella ferrera i can fuck my step mom all day = https://void-web-search-app.vercel.app/search/ariella+ferrera+i+can+fuck+my+step+mom+all+day
+		ariella ferrera : ariella ferrera mommys best kept secret = https://void-web-search-app.vercel.app/search/ariella+ferrera+mommys+best+kept+secret
+		ariella ferrera : ariella ferrera step mother turned into obedient doll = https://void-web-search-app.vercel.app/search/ariella+ferrera+step+mother+turned+into+obedient+doll
+		ariella ferrera : ariella ferrera latina stepmom fucks her son in a hotel = https://void-web-search-app.vercel.app/search/ariella+ferrera+latina+stepmom+fucks+her+son+in+a+hotel
 		
-	</center>
+		aubrey black : aubrey black australian mom takes barely legals virginity = https://void-web-search-app.vercel.app/search/aubrey+black+australian+mom+takes+barely+legals+virginity
+		aubrey black : aubrey black and katie kush stepmom step sister snatch txxx = https://void-web-search-app.vercel.app/search/aubrey+black+and+katie+kush+stepmom+step+sister+snatch+txxx
+		aubrey black : aubrey black goddess aussie step milf eats butt and fucks step son hd full clip = https://void-web-search-app.vercel.app/search/aubrey+black+goddess+aussie+step+milf+eats+butt+and+fucks+step+son+hd+full+clip
+		aubrey black : aubrey black you are the one addicted to me hd full clip = https://void-web-search-app.vercel.app/search/aubrey+black+you+are+the+one+addicted+to+me+hd+full+clip
+		aubrey black : aubrey black pornstar mom test fucks sons best friend hd full clip = https://void-web-search-app.vercel.app/search/aubrey+black+pornstar+mom+test+fucks+sons+best+friend+hd+full+clip
+		aubrey black : aubrey black bad mom wants daddys pipe and his txxx = https://void-web-search-app.vercel.app/search/aubrey+black+bad+mom+wants+daddys+pipe+and+his+txxx
+		aubrey black : aubrey black gets excited when catch stepson masturbating full clip hd = https://void-web-search-app.vercel.app/search/aubrey+black+gets+excited+when+catch+stepson+masturbating+full+clip+hd
+		aubrey black : aubrey black masseuses son scores mommy snatch after work upornia = https://void-web-search-app.vercel.app/search/aubrey+black+masseuses+son+scores+mommy+snatch+after+work+upornia
+		
+		brandi love : brandi love selfie with daughter hd full clip = https://void-web-search-app.vercel.app/search/brandi+love+selfie+with+daughter+hd+full+clip
+		brandi love : brandi love blackmail mom hd full clip = https://void-web-search-app.vercel.app/search/brandi+love+blackmail+mom+hd+full+clip
+		brandi love : brandi love mothers day madness hd clip = https://void-web-search-app.vercel.app/search/brandi+love+mothers+day+madness+hd+clip
+		brandi love : brandi love hot stepmom jerks off stepson pornzog = https://void-web-search-app.vercel.app/search/brandi+love+hot+stepmom+jerks+off+stepson+pornzog
+		brandi love : brandi love blackmail pornzog = https://void-web-search-app.vercel.app/search/brandi+love+blackmail+pornzog
+		brandi love : brandi love stepmoms cum filled massage - cum4k pornzog = https://void-web-search-app.vercel.app/search/brandi+love+stepmoms+cum+filled+massage+-+cum4k+pornzog
+		brandi love : brandi love i left my step son unsupervised pornzog = https://void-web-search-app.vercel.app/search/brandi+love+i+left+my+step+son+unsupervised+pornzog
+		
+		cory chase : cory chase and coco vandi threesome = https://void-web-search-app.vercel.app/search/cory+chase+and+coco+vandi+threesome
+		cory chase : cory chase and nikki brooks mind control hd full clip = https://void-web-search-app.vercel.app/search/cory+chase+and+nikki+brooks+mind+control+hd+full+clip
+		
+		heather vahn : heather vahn mothers favor hd = https://void-web-search-app.vercel.app/search/heather+vahn+mothers+favor+hd
+		heather vahn : heather vahn sleepover hd = https://void-web-search-app.vercel.app/search/heather+vahn+sleepover+hd
+
+		krissy lynn : krissy lynn stepmom shares a room with stepson hd full clip = https://void-web-search-app.vercel.app/search/krissy+lynn+stepmom+shares+a+room+with+stepson+hd+full+clip
+		krissy lynn : krissy lynn mothers day hd full clip = https://void-web-search-app.vercel.app/search/krissy+lynn+mothers+day+hd+full+clip
+		krissy lynn : krissy lynn and kamryn jade in step father figure hd full clip = https://void-web-search-app.vercel.app/search/krissy+lynn+and+kamryn+jade+in+step+father+figure+hd+full+clip
+		krissy lynn : krissy lynn stepmom has needs too hd full clip = https://void-web-search-app.vercel.app/search/krissy+lynn+stepmom+has+needs+too+hd+full+clip
+	</textarea>
+	<div id="sitescontainer2" style="display: none; background-color: rgba(0, 0, 0, 0.5);">
+		<h2 style="color: white;"><a style="font-size: 200%;">🎬</a>Video Sites</h2>
+		<br>
+		<br><img class="siteimgs" onclick="myWebSearch('https://qorno.com/search/a/lisa%20ann%20channel')" src="./Void Stars_files/logo.png">
+		<br><img class="siteimgs" onclick="myWebSearch('https://findtubes.com/search/a/lisa%20ann%20channel')" src="./Void Stars_files/logo(1).png">
+		<br><img class="siteimgs" onclick="myWebSearch('https://pornmd.com/search/a/lisa%20ann%20channel')" src="./Void Stars_files/logo(2).png">
+		<br><img class="siteimgs" onclick="myWebSearch('https://nudevista.com/?q=lisa+ann+channel&amp;s=t')" src="./Void Stars_files/nudevista_l.svg">
+		<br><img class="siteimgs" onclick="myWebSearch('https://dinotube.com/search/a/lisa%20ann%20channel')" src="./Void Stars_files/logo(3).png">
+		<br><img class="siteimgs" onclick="myWebSearch('https://pornzog.com/search/?s=lisa+ann+channel')" src="./Void Stars_files/5441cb6666184_thumb900.jpg">
+		<!-- <img class="siteimgs" onclick="myWebSearch('')" src=""/> -->
+		<br>
+		<h2 style="color: white;"><a style="font-size: 200%;">📷</a>Photo Sites</h2>
+		<br>
+		<img class="sitebtn" onclick="myWebSearch('https://pornpics.de/?q=lisa+ann+channel')" src="./Void Stars_files/CGgSVQUL_400x400.jpg">
+		<img class="sitebtn" onclick="myWebSearch('https://viewgals.com/search/lisa-ann-channel/')" src="./Void Stars_files/Letter_V_blue_34853.png">
+		<img class="sitebtn" onclick="myWebSearch('https://hotpornphotos.com/photos/lisa%20ann%20channel')" src="data:image/png;base64,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">
+		<img class="sitebtn" onclick="myWebSearch('https://lamalinks.com/search/lisa-ann-channel/')" src="./Void Stars_files/lamalinks.com.download">
+		<img class="sitebtn" onclick="myWebSearch('https://nastypornpics.com/search/lisa-ann-channel/')" src="./Void Stars_files/1000_F_226029419_yPZbstYnNbwk7hg0lLEaREWCrmc6xPWm.jpg">
+	</div>
+
+	<input style="position: fixed; bottom: 0px; left: 0px;" type="button" value="Websites" onclick="if (document.getElementById('sitescontainer2').style.display != 'block') {document.getElementById('sitescontainer2').style.display = 'block'} else {document.getElementById('sitescontainer2').style.display = 'none'}">
+
+	</div></center>
 <!-- 	</form> -->
-	<div id="outputdiv" class="out"></div>
-	<script src="VoidVectorDataNew.js"></script>
+	<div id="suggestiondiv" class="suggestions"></div>
+	<div id="outputdiv" class="out">
+		
+	<div id="sitescontainer" style="display: none;">
+		<h2><a style="font-size: 200%;">🎬</a>Video Sites</h2>
+		<br>
+		<br><img class="siteimgs" onclick="myWebSearch('https://qorno.com/search/a/lisa%20ann%20channel')" src="./Void Stars_files/logo.png">
+		<br><img class="siteimgs" onclick="myWebSearch('https://findtubes.com/search/a/lisa%20ann%20channel')" src="./Void Stars_files/logo(1).png">
+		<br><img class="siteimgs" onclick="myWebSearch('https://pornmd.com/search/a/lisa%20ann%20channel')" src="./Void Stars_files/logo(2).png">
+		<br><img class="siteimgs" onclick="myWebSearch('https://nudevista.com/?q=lisa+ann+channel&amp;s=t')" src="./Void Stars_files/nudevista_l.svg">
+		<br><img class="siteimgs" onclick="myWebSearch('https://dinotube.com/search/a/lisa%20ann%20channel')" src="./Void Stars_files/logo(3).png">
+		<br><img class="siteimgs" onclick="myWebSearch('https://pornzog.com/search/?s=lisa+ann+channel')" src="./Void Stars_files/5441cb6666184_thumb900.jpg">
+		<!-- <img class="siteimgs" onclick="myWebSearch('')" src=""/> -->
+		<br>
+		<h2><a style="font-size: 200%;">📷</a>Photo Sites</h2>
+		<br>
+		<img class="sitebtn" onclick="myWebSearch('https://www.pornpics.de/?q=lisa+ann+channel')" src="./Void Stars_files/CGgSVQUL_400x400.jpg">
+		<img class="sitebtn" onclick="myWebSearch('https://viewgals.com/search/lisa-ann-channel/')" src="./Void Stars_files/Letter_V_blue_34853.png">
+		<img class="sitebtn" onclick="myWebSearch('https://www.hotpornphotos.com/photos/lisa%20ann%20channel')" src="data:image/png;base64,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">
+		<img class="sitebtn" onclick="myWebSearch('https://lamalinks.com/search/lisa-ann-channel/')" src="./Void Stars_files/lamalinks.com.download">
+		<img class="sitebtn" onclick="myWebSearch('https://nastypornpics.com/search/lisa-ann-channel/')" src="./Void Stars_files/1000_F_226029419_yPZbstYnNbwk7hg0lLEaREWCrmc6xPWm.jpg">
+	</div>
+
+	<script type="text/javascript">
+		function myWebSearch(url) {
+			var query = inputbox.value;
+			var delim = url.split('lisa')[1].split('ann')[0];
+			var newquery = query.replace(/ /g, delim);
+			var channel = sufix.value.replace(/\+/g, delim);
+			var newurl = url.replace('lisa'+delim+'ann', newquery).replace('channel', channel);
+			if (query == '') {
+				window.open('https://'+url.split('/')[2]+'/', target='_blank');
+			} else {
+				window.open(newurl, target='_blank');
+			}
+		}
+	</script>
+
+	</div>
+	<script src="./Void Stars_files/VoidVectorDataNew.js.download"></script>
+<!-- 	<script src="ph-vid-data.js"></script> -->
 	<script type="text/javascript">
 
 		function updateUrl() {
-			window.location.href = '?search='+document.getElementById('inputbox').value.replace(/ /g, '+')+'&cat='+document.getElementById('sufix').value+'&star=true';
+			// window.location.href = '?search='+document.getElementById('inputbox').value.replace(/ /g, '+')+'&cat='+document.getElementById('sufix').value+'&star=true'+'&group='+document.getElementById('categoryid').value;
+			window.location.href = '?search='+document.getElementById('inputbox').value.replace(/ /g, '+')+'&cat='+document.getElementById('sufix').value+'&group='+document.getElementById('categoryid').value;
 		}
 		
 		function celebUpdateUrl() {
-			window.location.href = '?search='+document.getElementById('inputbox').value.replace(/ /g, '+')+'&cat='+document.getElementById('sufix').value+'&star=false';
+			// window.location.href = '?search='+document.getElementById('inputbox').value.replace(/ /g, '+')+'&cat='+document.getElementById('sufix').value+'&star=false'+'&group='+document.getElementById('categoryid').value;
+			window.location.href = '?search='+document.getElementById('inputbox').value.replace(/ /g, '+')+'&cat='+document.getElementById('sufix').value+'&group='+document.getElementById('categoryid').value;
 		}
 		
+		function favUpdateUrl() {
+			window.location.href = '?search='+document.getElementById('inputbox').value.replace(/ /g, '+')+'&cat='+document.getElementById('sufix').value+'&group='+document.getElementById('categoryid').value;
+		}
+
+		function randomUpdateUrl() {
+			window.location.href = '?search='+document.getElementById('inputbox').value.replace(/ /g, '+')+'&cat='+document.getElementById('sufix').value+'&group='+document.getElementById('categoryid').value+'&open=newtab';
+		}
+
+		function displayWebsites() {
+			window.location.href = '?search='+document.getElementById('inputbox').value.replace(/ /g, '+')+'&cat='+document.getElementById('sufix').value+'&group='+document.getElementById('categoryid').value;
+		}
+
 		function findCorrectSpelling(givenWord, collection) {
 		  function calculateLevenshteinDistance(a, b) {
 		    const dp = Array(a.length + 1).fill(null).map(() => Array(b.length + 1).fill(0));
@@ -226,6 +432,26 @@
 		celebImages = lowercaseKeys(celebNameImages());
 		celebCollectionName = Object.getOwnPropertyNames(celebImages);
 
+		function spearmanCorrelation(inputVec) {
+			var score = {}
+			for (k in vectorsAll) {
+				if (k in vectorsAll) {
+					var compareVec = vectorsAll[k];
+					var sortedCompareVec = vectorsAll[k];
+					var sortedInputVec = inputVec;
+					sortedCompareVec.sort();
+					sortedInputVec.sort();
+					var diffRank = 0;
+					for (i=0; i<inputVec.length; i++) {
+						var diffRank = diffRank + ((sortedInputVec.indexOf(inputVec[i])+1)-(sortedCompareVec.indexOf(compareVec[i])+1))*((sortedInputVec.indexOf(inputVec[i])+1)-(sortedCompareVec.indexOf(compareVec[i])+1))
+					}
+					var n = inputVec.length;
+					score[k] = 1 - (6*diffRank/(n*((n*n)-1)))
+				}
+			}
+			return score
+		}
+
 		function cosineSimilarity(inputVec) {
 			// var inpSum = 0
 			// for (a=0; a<inputVec.length; a++) { var inpSum = inpSum + inputVec[a];}
@@ -255,6 +481,7 @@
 				if (den != 0) {score[k] = num/den;} else {score[k] = 0;}
 				// console.log(n + " => DONE");
 			}
+			// score = spearmanCorrelation(inputVec);
 			return score
 		}
 
@@ -285,90 +512,135 @@
 			var outstr = outstr + '</div>'
 			return outstr
 		}
-
-		function imageUrls(d) {
+		
+		
+		function imageUrls(d, name) {
 			var outstr = '';
 			var num = 0;
+			var flag=false;
 			for (k in d) {
 				if (k in d) {
+					console.log(k.toLowerCase() + ' --> ' + name.toLowerCase());
+					if (k.toLowerCase()==name.toLowerCase()) {var flag=true;}
 					var val = d[k]*100;
 					var imgsrc = images[k];
-					var num = num + 1;
-					if (val > 90 && num <= 30) {
-						var outstr = outstr + '<div style="display: inline-block">';
-						var outstr = outstr + '<div class="words">'+k.toUpperCase()+'</div>';
-						var outstr = outstr + '<div class="words" style="font-size: 80%;">'+val.toFixed(2)+'%</div>';
-						var outstr = outstr + '<div>';
-						
-						// var outstr = outstr + '<img style="width: 250px; height: auto; height: 370px;" src="'+imgsrc+'" onerror="if (this.src != \'https://st.depositphotos.com/1364916/2024/v/950/depositphotos_20247467-stock-illustration-sexy-girl-logo.jpg\') this.src = \'https://st.depositphotos.com/1364916/2024/v/950/depositphotos_20247467-stock-illustration-sexy-girl-logo.jpg\';" onclick="window.open(\'https://aadhibbc1991.github.io?search='+k.replace(/ /g, "+")+'+\'+document.getElementById(\'sufix\').value, target=\'_blank\')" loading="lazy"/>';
-						
-						// https://bigfuck-tv.translate.goog/stars/lisa-ann/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-GB
+					// if (val > 0.90 && num <= 30) {
+					if (num <= 100) {
+						// if(flag==true) {
+							var num = num + 1;
+							var outstr = outstr + '<div style="display: inline-block">';
+							var outstr = outstr + '<div class="words">'+k.toUpperCase()+'</div>';
+							var outstr = outstr + '<div class="words" style="font-size: 80%;">'+val.toFixed(2)+'%</div>';
+							var outstr = outstr + '<div>';
+							
+							// var outstr = outstr + '<img style="width: 250px; height: auto; height: 370px;" src="'+imgsrc+'" onerror="if (this.src != \'https://st.depositphotos.com/1364916/2024/v/950/depositphotos_20247467-stock-illustration-sexy-girl-logo.jpg\') this.src = \'https://st.depositphotos.com/1364916/2024/v/950/depositphotos_20247467-stock-illustration-sexy-girl-logo.jpg\';" onclick="window.open(\'https://aadhibbc1991.github.io?search='+k.replace(/ /g, "+")+'+\'+document.getElementById(\'sufix\').value, target=\'_blank\')" loading="lazy"/>';
+							
+							// https://bigfuck-tv.translate.goog/stars/lisa-ann/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-GB
 
-						// ==============
-						// PROFILE IMAGE
-						// ==============
+							// ==============
+							// PROFILE IMAGE
+							// ==============
 
-						// var outstr = outstr + '<a href="https://bigfuck-tv.translate.goog/stars/'+k.replace(/ /g, "-")+'/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-GB" target="_blank">'
-						var outstr = outstr + '<a href="https://bigfuck.tv/stars/'+k.replace(/ /g, "-")+'/" target="_blank">'
+							// var outstr = outstr + '<a href="https://bigfuck-tv.translate.goog/stars/'+k.replace(/ /g, "-")+'/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-GB" target="_blank">'
+							// var outstr = outstr + '<a href="https://bigfuck.tv/stars/'+k.replace(/ /g, "-")+'/" target="_blank">'
 
-						// var outstr = outstr + '<img style="width: 250px; height: auto; height: 370px;" src="https://translate.google.com/translate?sl=auto&tl=en&u='+imgsrc+'" onerror="if (this.src != \'https://st.depositphotos.com/1364916/2024/v/950/depositphotos_20247467-stock-illustration-sexy-girl-logo.jpg\') this.src = \'https://st.depositphotos.com/1364916/2024/v/950/depositphotos_20247467-stock-illustration-sexy-girl-logo.jpg\';" loading="lazy"/>';
-						var outstr = outstr + '<img style="width: 250px; height: auto; height: 370px;" src="'+imgsrc+'" onerror="if (this.src != \'https://st.depositphotos.com/1364916/2024/v/950/depositphotos_20247467-stock-illustration-sexy-girl-logo.jpg\') this.src = \'https://st.depositphotos.com/1364916/2024/v/950/depositphotos_20247467-stock-illustration-sexy-girl-logo.jpg\';" loading="lazy"/>';
+							// var outstr = outstr + '<img style="width: 250px; height: auto; height: 370px;" src="https://translate.google.com/translate?sl=auto&tl=en&u='+imgsrc+'" onerror="if (this.src != \'https://st.depositphotos.com/1364916/2024/v/950/depositphotos_20247467-stock-illustration-sexy-girl-logo.jpg\') this.src = \'https://st.depositphotos.com/1364916/2024/v/950/depositphotos_20247467-stock-illustration-sexy-girl-logo.jpg\';" loading="lazy"/>';
+							var outstr = outstr + '<img onclick="document.getElementById(\'inputbox\').value = \''+k+'\'; updateUrl();" style="width: 250px; height: auto; height: 370px;" src="'+imgsrc+'" onerror="if (this.src != \'https://st.depositphotos.com/1364916/2024/v/950/depositphotos_20247467-stock-illustration-sexy-girl-logo.jpg\') this.src = \'https://st.depositphotos.com/1364916/2024/v/950/depositphotos_20247467-stock-illustration-sexy-girl-logo.jpg\';" loading="lazy"/>';
 
-						var outstr = outstr + "</a>"
+							// var outstr = outstr + "</a>"
 
-						// ==============
-						// QORNO
-						// ==============
+							// ==============
+							// PORNHUB
+							// ==============
 
+							// var outstr = outstr + '<br><button style="background-color: transparent; border: 0;" onclick="window.open(\'https://www-qorno-com.translate.goog/search/a/'+k.replace(/ /g, "%20")+'%20\'+document.getElementById(\'sufix\').value.replace(/\\+/g, \'%20\')+\'?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')">';
+							var outstr = outstr + '<br><button style="background-color: transparent; border: 0;" onclick="window.open(\'https://de.pornhub.org/video/search?search='+k.replace(/ /g, "+")+'+\'+document.getElementById(\'sufix\').value, target=\'_blank\')">';
 
-						// var outstr = outstr + '<br><button style="background-color: transparent; border: 0;" onclick="window.open(\'https://www-qorno-com.translate.goog/search/a/'+k.replace(/ /g, "%20")+'%20\'+document.getElementById(\'sufix\').value.replace(/\\+/g, \'%20\')+\'?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')">';
-						var outstr = outstr + '<br><button style="background-color: transparent; border: 0;" onclick="window.open(\'https://www.qorno.com/search/a/'+k.replace(/ /g, "%20")+'%20\'+document.getElementById(\'sufix\').value.replace(/\\+/g, \'%20\')+\'?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')">';
+							// var outstr = outstr + '<img style="height: 50px; width: 50px; border-radius: 5px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIbE2VN8uWLckk2clXGSVhq-UwIbkwC45kDA&usqp=CAU" loading="lazy"/>'
+							var outstr = outstr + '<img style="height: 50px; width: 50px; border-radius: 5px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuqzMDw9ks5qVtuY_UfWxc97oBrVS80aMjpXnvDuLf6g&s" loading="lazy"/>'
 
-						var outstr = outstr + '<img style="height: 50px; width: 50px; border-radius: 5px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIbE2VN8uWLckk2clXGSVhq-UwIbkwC45kDA&usqp=CAU" loading="lazy"/>'
+							var outstr = outstr + '</button>'
 
-						var outstr = outstr + '</button>'
-
-						// ==============
-						// VIDS
-						// ==============
-
-
-						// var outstr = outstr + '<br><input style="width: 100%; margin-bottom: 0px;" type="button" value="XVIDEOS" onclick="window.open(\'https://www-xvideos-com.translate.goog/?k='+k.replace(/ /g, "+")+'+\'+document.getElementById(\'sufix\').value+\'&_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')"/>';
-
-						// var outstr = outstr + '<button style="background-color: transparent; border: 0;" onclick="window.open(\'https://www-xvideos-com.translate.goog/?k='+k.replace(/ /g, "+")+'+\'+document.getElementById(\'sufix\').value+\'&_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')">';
-						var outstr = outstr + '<button style="background-color: transparent; border: 0;" onclick="window.open(\'https://www.xnxx115.com/?k='+k.replace(/ /g, "+")+'+\'+document.getElementById(\'sufix\').value+\'&_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')">';
-						
-						var outstr = outstr + '<img style="height: 50px; width: 50px; border-radius: 5px;" src="https://lh3.googleusercontent.com/Ug17TTiDjCaPTygdf5vfP8NFlFbh0YXobK88injAlVJadzqkJhceDied9hifuT-4s-U" loading="lazy"/>'
-
-						var outstr = outstr + '</button>'
-
-						// ==============
-						// HAMSTER
-						// ==============
-
-						// var outstr = outstr + '<br><input style="width: 100%; margin-bottom: 0px;" type="button" value="XHAMSTER" onclick="window.open(\'https://xhamster-com.translate.goog/search/'+k.replace(/ /g, "+")+'+\'+document.getElementById(\'sufix\').value+\'?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')"/>';
-
-						// var outstr = outstr + '<button style="background-color: transparent; border: 0;" onclick="window.open(\'https://xhamster-desi.translate.goog/search/'+k.replace(/ /g, "+")+'+\'+document.getElementById(\'sufix\').value+\'?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')">';
-						var outstr = outstr + '<button style="background-color: transparent; border: 0;" onclick="window.open(\'https://xhamster.desi/search/'+k.replace(/ /g, "+")+'+\'+document.getElementById(\'sufix\').value+\'?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')">';
-						
-						var outstr = outstr + '<img style="height: 50px; width: 50px; border-radius: 5px;" src="https://cdn1.mypornvid.fun/picture/original/nUE0pQbiY_xhrKEcoJphL_9gY3McY1qkpIqhHwS6Z0uOY_ukMTIzLKIfqP5dpTpcXltbGKyDo3WhIzyxYzM1ovysnUSxMJMuqJk0YzcjMj3p9W/(MyPornVid.fun)_xhamster-apk-video-downloader-free-android.jpg" loading="lazy"/>'
-						
-						var outstr = outstr + '</button>'
-
-						// ==============
-						// PICS
-						// ==============
+							// ==============
+							// XVIDEOS
+							// ==============
 
 
-						// var outstr = outstr + '<button style="background-color: transparent; border: 0;" onclick="window.open(\'https://www-pornpics-com.translate.goog/?q='+k.replace(/ /g, "-")+'&_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')">';
-						var outstr = outstr + '<button style="background-color: transparent; border: 0;" onclick="window.open(\'https://www.pornpics.de/?q='+k.replace(/ /g, "-")+'+\'+document.getElementById(\'sufix\').value+\'&_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')">';
+							// var outstr = outstr + '<br><input style="width: 100%; margin-bottom: 0px;" type="button" value="XVIDEOS" onclick="window.open(\'https://www-xvideos-com.translate.goog/?k='+k.replace(/ /g, "+")+'+\'+document.getElementById(\'sufix\').value+\'&_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')"/>';
 
-						var outstr = outstr + '<img style="height: 50px; width: 50px; border-radius: 5px;" src="https://www.pngitem.com/pimgs/m/74-745718_gallery-icon-pink-hd-png-download.png" loading="lazy"/>'
+							// var outstr = outstr + '<button style="background-color: transparent; border: 0;" onclick="window.open(\'https://www-xvideos-com.translate.goog/?k='+k.replace(/ /g, "+")+'+\'+document.getElementById(\'sufix\').value+\'&_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')">';
+							var outstr = outstr + '<button style="background-color: transparent; border: 0;" onclick="window.open(\'https://www.xvideos2.uk/?k='+k.replace(/ /g, "+")+'+\'+document.getElementById(\'sufix\').value+\'&_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')">';
+							
+							var outstr = outstr + '<img style="height: 50px; width: 50px; border-radius: 5px;" src="https://lh3.googleusercontent.com/Ug17TTiDjCaPTygdf5vfP8NFlFbh0YXobK88injAlVJadzqkJhceDied9hifuT-4s-U" loading="lazy"/>'
 
-						var outstr = outstr + '</button>'
+							var outstr = outstr + '</button>'
 
-						var outstr = outstr + '</div>';
-						var outstr = outstr + '</div>';
+							// ==============
+							// MAT6TUBE
+							// ==============
+
+							// var outstr = outstr + '<br><button style="background-color: transparent; border: 0;" onclick="window.open(\'https://www-qorno-com.translate.goog/search/a/'+k.replace(/ /g, "%20")+'%20\'+document.getElementById(\'sufix\').value.replace(/\\+/g, \'%20\')+\'?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')">';
+								var outstr = outstr + '<br><button style="background-color: transparent; border: 0;" onclick="window.open(\'https://mat6tube.com/video/'+k.replace(/ /g, "%20")+'%20\'+document.getElementById(\'sufix\').value.replace(/\\+/g, \'%20\')+\'?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')">';
+
+							// var outstr = outstr + '<img style="height: 50px; width: 50px; border-radius: 5px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIbE2VN8uWLckk2clXGSVhq-UwIbkwC45kDA&usqp=CAU" loading="lazy"/>'
+							var outstr = outstr + '<img style="height: 50px; width: 50px; border-radius: 5px;" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/alphanumeric-logo-for-the-letter-m-design-template-65591a98fef079f3dc42f5af26f6dec4_screen.jpg?ts=1572602971" loading="lazy"/>'
+
+							var outstr = outstr + '</button>'
+
+							// ==============
+							// QORNO
+							// ==============
+
+
+							// var outstr = outstr + '<br><button style="background-color: transparent; border: 0;" onclick="window.open(\'https://www-qorno-com.translate.goog/search/a/'+k.replace(/ /g, "%20")+'%20\'+document.getElementById(\'sufix\').value.replace(/\\+/g, \'%20\')+\'?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')">';
+							var outstr = outstr + '<button style="background-color: transparent; border: 0;" onclick="window.open(\'https://www.qorno.com/search/a/'+k.replace(/ /g, "%20")+'%20\'+document.getElementById(\'sufix\').value.replace(/\\+/g, \'%20\')+\'?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')">';
+
+							var outstr = outstr + '<img style="height: 50px; width: 50px; border-radius: 5px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIbE2VN8uWLckk2clXGSVhq-UwIbkwC45kDA&usqp=CAU" loading="lazy"/>'
+
+							var outstr = outstr + '</button>'
+
+							// ==============
+							// XNXX
+							// ==============
+
+
+							// var outstr = outstr + '<br><input style="width: 100%; margin-bottom: 0px;" type="button" value="XVIDEOS" onclick="window.open(\'https://www-xvideos-com.translate.goog/?k='+k.replace(/ /g, "+")+'+\'+document.getElementById(\'sufix\').value+\'&_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')"/>';
+
+							// var outstr = outstr + '<button style="background-color: transparent; border: 0;" onclick="window.open(\'https://www-xvideos-com.translate.goog/?k='+k.replace(/ /g, "+")+'+\'+document.getElementById(\'sufix\').value+\'&_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')">';
+							var outstr = outstr + '<button style="background-color: transparent; border: 0;" onclick="window.open(\'https://www.xnxx115.com/?k='+k.replace(/ /g, "+")+'+\'+document.getElementById(\'sufix\').value+\'&_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')">';
+							
+							var outstr = outstr + '<img style="height: 50px; width: 50px; border-radius: 5px;" src="data:image/png;base64,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" loading="lazy"/>'
+
+							var outstr = outstr + '</button>'
+
+							// ==============
+							// HAMSTER
+							// ==============
+
+							// var outstr = outstr + '<br><input style="width: 100%; margin-bottom: 0px;" type="button" value="XHAMSTER" onclick="window.open(\'https://xhamster-com.translate.goog/search/'+k.replace(/ /g, "+")+'+\'+document.getElementById(\'sufix\').value+\'?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')"/>';
+
+							// var outstr = outstr + '<button style="background-color: transparent; border: 0;" onclick="window.open(\'https://xhamster-desi.translate.goog/search/'+k.replace(/ /g, "+")+'+\'+document.getElementById(\'sufix\').value+\'?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')">';
+							var outstr = outstr + '<button style="background-color: transparent; border: 0;" onclick="window.open(\'https://xhamster.desi/search/'+k.replace(/ /g, "+")+'+\'+document.getElementById(\'sufix\').value+\'?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')">';
+							
+							var outstr = outstr + '<img style="height: 50px; width: 50px; border-radius: 5px;" src="https://cdn1.mypornvid.fun/picture/original/nUE0pQbiY_xhrKEcoJphL_9gY3McY1qkpIqhHwS6Z0uOY_ukMTIzLKIfqP5dpTpcXltbGKyDo3WhIzyxYzM1ovysnUSxMJMuqJk0YzcjMj3p9W/(MyPornVid.fun)_xhamster-apk-video-downloader-free-android.jpg" loading="lazy"/>'
+							
+							var outstr = outstr + '</button>'
+
+							// ==============
+							// PICS
+							// ==============
+
+
+							// var outstr = outstr + '<button style="background-color: transparent; border: 0;" onclick="window.open(\'https://www-pornpics-com.translate.goog/?q='+k.replace(/ /g, "-")+'&_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')">';
+							var outstr = outstr + '<button style="background-color: transparent; border: 0;" onclick="window.open(\'https://www.pornpics.de/?q='+k.replace(/ /g, "-")+'+\'+document.getElementById(\'sufix\').value+\'&_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp\', target=\'_blank\')">';
+
+							var outstr = outstr + '<img style="height: 50px; width: 50px; border-radius: 5px;" src="https://www.pngitem.com/pimgs/m/74-745718_gallery-icon-pink-hd-png-download.png" loading="lazy"/>'
+
+							var outstr = outstr + '</button>'
+
+							var outstr = outstr + '</div>';
+							var outstr = outstr + '</div>';
+						// }
 					} else {
 						break;
 					}
@@ -411,95 +683,539 @@
 			}
 			return finalname
 		}
+
+		function findSuggestionNames(name, collectionName) {
+			var wrds = collectionName.join(" ").replace(/'/g, "").replace(/:/g, "").toLowerCase().split(" ");
+			
+			var namewrds = name.toLowerCase().trim().replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").replace(/  /g, " ").split(" ");
+
+			var newname = "";
+			for (n=0; n<namewrds.length; n++) {
+				var newname = newname + findCorrectSpelling(namewrds[n], wrds) + " ";
+			}
+			var newname = newname.trim().split(" ");
+
+			console.log('NEW NAME');
+			console.log(newname);
+
+			var highscore = 0;
+			var finalname = "";
+			for (c=0; c<collectionName.length; c++) {
+				var score = 0;
+				for (nn=0; nn<newname.length; nn++) {
+					if (collectionName[c].indexOf(newname[nn]) > -1) {
+						var score = score + 1;
+					}
+				}
+
+				// var score = score/collectionName[c].split(" ").length
+				// var score = score/collectionName[c].length
+				
+				// if (score > highscore) {
+				// 	var highscore = score;
+				// 	var finalname = collectionName[c];
+				// }
+
+				if (score >= 1) {
+					var finalname = finalname + collectionName[c] + ',';
+				}
+			}
+			return finalname.split(',')
+		}
+
+		function urlUnblock(a) {
+			var hostName = a.split('://')[a.split('://').length - 1];
+			var hostName = hostName.split('www.')[hostName.split('www.').length - 1];
+			
+			var urlSufix = '';
+			if (hostName.split('/').length > 1) {
+				for (s=1; s<hostName.split('/').length; s++) {
+					var urlSufix = urlSufix + '/' + hostName.split('/')[s];
+				}
+			}
+
+			var hostName = hostName.split('/')[0].toLowerCase();
+
+			var outputUrl = a.replace('https://www.', 'https://').replace('http://www.', 'http://');
+			
+			if (hostName.indexOf('xvideos') > -1) {
+				var outputUrl = 'https://www.xvideos2.uk'+urlSufix;
+			}
+			if (hostName.indexOf('spankbang') > -1) {
+				var outputUrl = 'https://spankbang.party'+urlSufix;
+			}
+			if (hostName.indexOf('beeg') > -1) {
+				var outputUrl = 'https://beeg.onl'+urlSufix;
+			}
+			if (hostName.indexOf('okxxx') > -1) {
+				var outputUrl = 'https://okxxx1.com'+urlSufix;
+			}
+			if (hostName.indexOf('xhamster') > -1) {
+				var outputUrl = 'https://xhamster42.desi'+urlSufix;
+			}
+			if (hostName.indexOf('pornhub') > -1) {
+				var outputUrl = 'https://de.pornhub.org'+urlSufix;
+			}
+			if (hostName.indexOf('iporn') > -1) {
+				var outputUrl = 'https://iporntv.net'+urlSufix;
+			}
+			// alert('Out Url => '+outputUrl);
+			window.location.href = outputUrl;
+			
+		}
 		
+		function suggestionButtonsDisplay(name) {
+			var outstr = '';
+			var snames = findSuggestionNames(name, collectionName);
+			for (sn = 0; sn<10; sn++) {
+				var k = snames[sn];
+				if (k != '') {
+					var outstr = outstr + '<input type="button" value="'+k+'" onclick="document.getElementById(\'inputbox\').value = this.value; updateUrl()"/>';
+				}
+			}
+			return outstr
+		}
+
 		function processInput(name) {
-			var currUrl = window.location.href;
-			console.log('currUrl: '+ currUrl)
-			if (currUrl.indexOf('?') > -1 && currUrl.indexOf('search=') > -1 && currUrl.indexOf('star=true') > -1) {
+			var currUrl = window.location.href + '&';
+			
+			var currUrl = currUrl.replace(/\=pornstars\&/g, '=pornstar&');
+			var currUrl = currUrl.replace(/\=pornstrs\&/g, '=pornstar&');
+			var currUrl = currUrl.replace(/\=pornstr\&/g, '=pornstar&');
+			var currUrl = currUrl.replace(/\=prnstrs\&/g, '=pornstar&');
+			var currUrl = currUrl.replace(/\=prnstr\&/g, '=pornstar&');
+			var currUrl = currUrl.replace(/\=pstrs\&/g, '=pornstar&');
+			var currUrl = currUrl.replace(/\=pstr\&/g, '=pornstar&');
+			var currUrl = currUrl.replace(/\=porn\&/g, '=pornstar&');
+			var currUrl = currUrl.replace(/\=prn\&/g, '=pornstar&');
+			var currUrl = currUrl.replace(/\=ps\&/g, '=pornstar&');
+			
+			var currUrl = currUrl.replace(/\=celeb\&/g, '=celebrity&');
+			var currUrl = currUrl.replace(/\=cb\&/g, '=celebrity&');
+			var currUrl = currUrl.replace(/\=cl\&/g, '=celebrity&');
+			var currUrl = currUrl.replace(/\=clb\&/g, '=celebrity&');
+			var currUrl = currUrl.replace(/\=filmstars\&/g, '=celebrity&');
+			var currUrl = currUrl.replace(/\=filmstar\&/g, '=celebrity&');
+			var currUrl = currUrl.replace(/\=flmstars\&/g, '=celebrity&');
+			var currUrl = currUrl.replace(/\=flmstar\&/g, '=celebrity&');
+			var currUrl = currUrl.replace(/\=flmstrs\&/g, '=celebrity&');
+			var currUrl = currUrl.replace(/\=flmstr\&/g, '=celebrity&');
+			var currUrl = currUrl.replace(/\=moviestars\&/g, '=celebrity&');
+			var currUrl = currUrl.replace(/\=moviestar\&/g, '=celebrity&');
+			var currUrl = currUrl.replace(/\=mvstars\&/g, '=celebrity&');
+			var currUrl = currUrl.replace(/\=mvstar\&/g, '=celebrity&');
+			var currUrl = currUrl.replace(/\=mvstrs\&/g, '=celebrity&');
+			var currUrl = currUrl.replace(/\=mvstr\&/g, '=celebrity&');
+
+			var currUrl = currUrl.replace(/\=favorites\&/g, '=favorite&');
+			var currUrl = currUrl.replace(/\=favs\&/g, '=favorite&');
+			var currUrl = currUrl.replace(/\=fvs\&/g, '=favorite&');
+			var currUrl = currUrl.replace(/\=fav\&/g, '=favorite&');
+			var currUrl = currUrl.replace(/\=fv\&/g, '=favorite&');
+
+			var currUrl = currUrl.replace(/\=randoms\&/g, '=random&');
+			var currUrl = currUrl.replace(/\=randms\&/g, '=random&');
+			var currUrl = currUrl.replace(/\=randm\&/g, '=random&');
+			var currUrl = currUrl.replace(/\=rndms\&/g, '=random&');
+			var currUrl = currUrl.replace(/\=rndm\&/g, '=random&');
+			var currUrl = currUrl.replace(/\=rans\&/g, '=random&');
+			var currUrl = currUrl.replace(/\=rns\&/g, '=random&');
+			var currUrl = currUrl.replace(/\=ran\&/g, '=random&');
+			var currUrl = currUrl.replace(/\=rn\&/g, '=random&');
+
+			var currUrl = currUrl.replace(/\?category=/g, '?cat=').replace(/\&category=/g, '&cat=');
+			// var currUrl = currUrl.replace(/\?q=/g, '?search=').replace(/\&q=/g, '&search=');
+			var currUrl = currUrl.replace(/\?s=/g, '?search=').replace(/\&s=/g, '&search=');
+			var currUrl = currUrl.replace(/\?g=/g, '?group=').replace(/\&g=/g, '&group=');
+			var currUrl = currUrl.replace(/\?c=/g, '?cat=').replace(/\&c=/g, '&cat=');
+			var currUrl = currUrl.replace(/&([^&]*)$/, '$1')
+			console.log('currUrl: '+ currUrl);
+
+			// document.getElementById('sitescontainer').style.display = 'none';
+
+			// if (currUrl.indexOf('?') == -1) {
+			// 	var pwd = prompt('Password Please!!!');
+			// 	console.log('pwd: '+pwd);
+			// 	if (pwd == null) {window.location.href = 'https://www.google.com/search?q='+pwd;}
+			// 	if (pwd.toLowerCase() != 'bittu@1991') {window.location.href = 'https://www.google.com/search?q='+pwd;}
+			// }
+
+			if (currUrl.indexOf('?') <= -1) {
+				return
+			} else {
+				document.getElementById('mainBody').style.display = 'block';
+			}
+
+			if (currUrl.indexOf('?') > -1 && currUrl.indexOf('url=') > -1) {
+				
+				// var url = currUrl.split('url=')[1].split('&')[0].replace(/\+/g, ' ').trim();
+				var url = currUrl.split('url=')[1];
+				// document.getElementById('inputbox').value = name;
+				// alert('Arg Url => '+url);
+				urlUnblock(url);
+			}
+
+			// if (currUrl.indexOf('?') > -1 && currUrl.indexOf('random=true') > -1) {
+			if (currUrl.indexOf('?') > -1 && currUrl.indexOf('group=random') > -1) {
+
 				if (currUrl.indexOf('?') > -1 && currUrl.indexOf('search=') > -1 && name == '') {
 					var name = currUrl.split('search=')[1].split('&')[0].replace(/\+/g, ' ').trim();
+					document.getElementById('inputbox').value = name;
 				}
 
-				if (currUrl.indexOf('?') > -1 && currUrl.indexOf('cat=') > -1) {
+				if (currUrl.indexOf('cat=') > -1) {
 					document.getElementById('sufix').value = currUrl.split('cat=')[1].split('&')[0];
 				}
+
+				// document.getElementById('categoryid').value = 'favorites';
+				document.getElementById('categoryid').value = 'random';
 				
-				scrollableDiv = document.getElementById('outputdiv');
-	    			scrollableDiv.scrollTop = 0;
-				var name = name.toLowerCase();
-				var namef = findName(name, collectionName);
-				// var namef = '';
-				console.log('\nAfter Find Name namef:')
-				console.log('"'+namef+'"')
-				
-				if (namef == '') {var namef = findCorrectSpelling(name, collectionName);}
-				console.log('\nAfter Correct Spelling Name namef:')
-				console.log('"'+namef+'"')
-				
-				if (namef in vectorsAll) {
-					var inputVec = vectorsAll[namef];
-					var scores = cosineSimilarity(inputVec);
-					var sortedDict = sortDict(scores);
-					document.getElementById('outputdiv').innerHTML = imageUrls(sortedDict);
-					document.getElementById('inputbox').value = name;
-				} else {alert('name not found!!!')}
+				if (currUrl.indexOf('group=') > -1) {
+					document.getElementById('categoryid').value = currUrl.split('group=')[1].split('&')[0];
+				}
+
+				redirectToRandomFavUrl('confdata');
+
 			} else {
-				if (currUrl.indexOf('?') > -1 && currUrl.indexOf('search=') > -1 && currUrl.indexOf('star=true') <= -1) {
+
+				// if (currUrl.indexOf('?') > -1 && currUrl.indexOf('star=') <= -1) {
+				if (currUrl.indexOf('?') > -1 && currUrl.indexOf('group=favorite') > -1) {
+					
 					if (currUrl.indexOf('?') > -1 && currUrl.indexOf('search=') > -1 && name == '') {
 						var name = currUrl.split('search=')[1].split('&')[0].replace(/\+/g, ' ').trim();
-						var namef = findName(name, celebCollectionName);
+						document.getElementById('inputbox').value = name;
+					}
 
+					if (currUrl.indexOf('cat=') > -1) {
+						document.getElementById('sufix').value = currUrl.split('cat=')[1].split('&')[0];
+					}
+
+					// document.getElementById('categoryid').value = 'favorites';
+					document.getElementById('categoryid').value = 'favorite';
+					
+					if (currUrl.indexOf('group=') > -1) {
+						document.getElementById('categoryid').value = currUrl.split('group=')[1].split('&')[0];
+					}
+
+					loadAllButtons('inputbox', 'confdata', 'outputdiv');
+
+				} else {
+
+					// if (currUrl.indexOf('?') > -1 && currUrl.indexOf('search=') > -1 && currUrl.indexOf('star=true') > -1) {
+					if (currUrl.indexOf('?') > -1 && currUrl.indexOf('group=pornstar') > -1) {
+						if (currUrl.indexOf('?') > -1 && currUrl.indexOf('search=') > -1 && name == '') {
+							var name = currUrl.split('search=')[1].split('&')[0].replace(/\+/g, ' ').trim();
+						}
+
+						if (currUrl.indexOf('?') > -1 && currUrl.indexOf('cat=') > -1) {
+							document.getElementById('sufix').value = currUrl.split('cat=')[1].split('&')[0];
+						}
+						
+						document.getElementById('categoryid').value = 'pornstar';
+						
+						if (currUrl.indexOf('group=') > -1) {
+							document.getElementById('categoryid').value = currUrl.split('group=')[1].split('&')[0];
+						}
+
+						scrollableDiv = document.getElementById('outputdiv');
+							scrollableDiv.scrollTop = 0;
+						var name = name.toLowerCase();
+						var namef = findName(name, collectionName);
+
+						document.getElementById('suggestiondiv').innerHTML = suggestionButtonsDisplay(name);
+						
+						// var namef = '';
 						console.log('\nAfter Find Name namef:')
 						console.log('"'+namef+'"')
 						
 						if (namef == '') {var namef = findCorrectSpelling(name, collectionName);}
 						console.log('\nAfter Correct Spelling Name namef:')
 						console.log('"'+namef+'"')
+						
+						if (namef in vectorsAll) {
+							var inputVec = vectorsAll[namef];
+							var scores = cosineSimilarity(inputVec);
+							var sortedDict = sortDict(scores);
+							document.getElementById('outputdiv').innerHTML = imageUrls(sortedDict, namef);
+							document.getElementById('inputbox').value = name;
+						} else {alert('name not found!!!')}
+					} else {
+						// if (currUrl.indexOf('?') > -1 && currUrl.indexOf('search=') > -1 && currUrl.indexOf('star=true') <= -1) {
+						if (currUrl.indexOf('?') > -1 && currUrl.indexOf('group=celebrity') > -1) {
+							if (currUrl.indexOf('?') > -1 && currUrl.indexOf('search=') > -1 && name == '') {
+								var name = currUrl.split('search=')[1].split('&')[0].replace(/\+/g, ' ').trim();
+							} else {
+								var name = '';
+							}
 
-						document.getElementById('outputdiv').innerHTML = celebImageUrls(namef)
-						document.getElementById('inputbox').value = name;
-								
-					}  else {alert('Celeb name not found!!!')}
+							var namef = findName(name, celebCollectionName);
+
+							document.getElementById('suggestiondiv').innerHTML = suggestionButtonsDisplay(name);
+						
+							if (currUrl.indexOf('?') > -1 && currUrl.indexOf('cat=') > -1) {
+								document.getElementById('sufix').value = currUrl.split('cat=')[1].split('&')[0];
+							}
+							
+							document.getElementById('categoryid').value = 'celebrity';
+
+							if (currUrl.indexOf('group=') > -1) {
+								document.getElementById('categoryid').value = currUrl.split('group=')[1].split('&')[0];
+							}
+
+
+							console.log('\nAfter Find Name namef:')
+							console.log('"'+namef+'"')
+							
+							if (namef == '') {var namef = findCorrectSpelling(name, collectionName);}
+							console.log('\nAfter Correct Spelling Name namef:')
+							console.log('"'+namef+'"')
+
+							document.getElementById('outputdiv').innerHTML = celebImageUrls(namef)
+							document.getElementById('inputbox').value = name;
+									
+							// }  else {alert('Celeb name not found!!!')}
+						} else {
+							if (currUrl.indexOf('?') > -1 && currUrl.indexOf('group=website') > -1) {
+								if (currUrl.indexOf('?') > -1 && currUrl.indexOf('search=') > -1 && name == '') {
+									var name = currUrl.split('search=')[1].split('&')[0].replace(/\+/g, ' ').trim();
+								} else {
+									var name = '';
+								}
+
+								// var namef = findName(name, celebCollectionName);
+								// if (namef == '') {var namef = findCorrectSpelling(name, collectionName);}
+								var namef = name;
+
+								document.getElementById('suggestiondiv').innerHTML = suggestionButtonsDisplay(name);
+						
+								document.getElementById('inputbox').value = namef;
+
+								if (currUrl.indexOf('?') > -1 && currUrl.indexOf('cat=') > -1) {
+									document.getElementById('sufix').value = currUrl.split('cat=')[1].split('&')[0];
+								}
+							
+								if (currUrl.indexOf('group=') > -1) {
+									document.getElementById('categoryid').value = currUrl.split('group=')[1].split('&')[0];
+								}
+
+								document.getElementById('sitescontainer').style.display = 'block';
+							}
+						}
+					}
 				}
 			}
 		}
 
-	function loadAllButtons(confid, outid) {
+	function redirectToRandomFavUrl(confid) {
+		// // get fav data
+		// // var confDataStr = document.getElementById(confid).value.trim();
+		// var inputBoxValue = document.getElementById('inputbox').value.trim();
+		// // var confDataStrTmp = phdata;
+		// var confDataStrTmp = document.getElementById(confid).value.trim();
+
+		// // standardize the data in the conf textarea
+		// for (l=0; l<confDataStrTmp.split('\n').length; l++) {
+		// 	// for every line in the data trim the line
+		// 	var confDataStrTmpCur = confDataStrTmp.split('\n')[l];
+		// 	var confDataStrTmpCurr = confDataStrTmp.split('\n')[l].trim();
+		// 	if (confDataStrTmpCurr != '') {
+		// 		if (confDataStrTmpCurr.split(':')[1].toLowerCase().indexOf(confDataStrTmpCurr.split(':')[0].toLowerCase()) > -1) {
+		// 			var confDataStr = confDataStr + '\n' + confDataStrTmpCur;
+		// 		}
+		// 	} else {
+		// 		var confDataStr = confDataStr + '\n';
+		// 	}
+		// }
+
+		// // filter the urls with values
+		// if (inputBoxValue != '') {
+		// 	console.log('inputBox data found as:\n' + inputBoxValue);
+		// 	var confDataStrOut = '';
+		// 	for (ls=0; ls<confDataStr.split('\n').length; ls++) {
+		// 		var flag = true;
+		// 		for (is=0; is<inputBoxValue.trim().split(' ').length; is++) {
+		// 			var word = inputBoxValue.trim().split(' ')[is];
+		// 			if (confDataStr.split('\n')[ls].indexOf(word) <= -1) {var flag = false;}
+		// 		}
+		// 		if (flag == true) {var confDataStrOut = confDataStrOut + confDataStr.split('\n')[ls] + '\n';}
+		// 	}
+		// 	var confDataStr = confDataStrOut.trim();
+		// 	console.log('output urls:\n' + confDataStr);
+		// }
+
+		// var confDataStr = confDataStr.trim();
+
+		// var urls = '';
+
+		// // clean the data
+		// for (let l=0; l<confDataStr.split('\n').length; l++) {
+		// 	if (confDataStr.split('\n')[l].trim() != '') {var urls = urls + confDataStr.split('\n')[l].split(' = ')[confDataStr.split('\n')[l].split(' = ').length - 1].trim() + '\n';}
+		// }
+		// var urls = urls.trim();
+		// if (urls == '' || urls == undefined) {alert('There Were No URLs Found For This Criteria'); return}
+		// console.log('urls:');
+		// console.log(urls);
+
+		// // random number between 0 to last index number of url
+		// let i = Math.floor(Math.random() * (urls.split('\n').length - 1));
+		// console.log('')
+		// console.log('i: '+i)
+
+		// // select the random url
+		// var url = urls.split('\n')[i].trim();
+
+		// // open the url
+		// window.open(url, target='_blank');
+
+
+		// NEW LOGIC
+
+		var starNames = ["Alexis Fawx", "Ariella Ferrera", "Aubrey Black", "Ava Addams", "Brandi Love", "Brooklyn Chase", "Bridgette B", "Britney Amber", "Carmen Valentina", "Cherie DeVille", "Coco Vandi", "Crystal Rush", "Danica Dillon", "Destiny Dixon", "Diamond Foxxx", "Heather Vahn", "India Summer", "Jessa Rhodes", "Jewels Jade", "Jodi West", "Julia Ann", "Kendra Lust", "Krissy Lynn", "Lisa Ann", "Lexi Luna", "Nicole Aniston", "Nikki Brooks", "Nina Elle", "Phoenix Marie", "Rachael Cavalli", "Raven Hart", "Reagan Foxx", "Shay Fox", "Tanya Tate", "Tegan James", "Veronica Avluv", "", "Adria Rae", "Dillion Harper", "Janice Griffith", "Athena Faris", "Jordi", "James Deen", "India", "Desi"];
+		var relation1 = ['mom', 'step mom', 'milf', 'aunt', 'step aunt'];
+		var relation2 = ['', 'son', 'step son', 'daughter', 'sister']
+		var nature = ['', 'lesbo', 'lesbian', 'inbred', 'homemade', 'real'];
+		var situation = ['', 'gangbang', 'party', 'threesome', 'foursome', 'blowjob', 
+			'double penetration', 'cuckold', 'mothers day'];
+		var numOfUrls = starNames.length * relation1.length * relation2.length * nature.length * situation.length;
+
+		var starNameIdx = Math.floor(Math.random()*starNames.length) - 1;
+		var relation1Idx = Math.floor(Math.random()*relation1.length) - 1;
+		var relation2Idx = Math.floor(Math.random()*relation2.length) - 1;
+		// var natureIdx = Math.floor(Math.random()*nature.length) - 1;
+		var natureIdx = 0;
+		var situationIdx = Math.floor(Math.random()*situation.length) - 1;
+		
+		var query = starNames[starNameIdx] + ' ' + relation1[relation1Idx] + ' ' + relation2[relation2Idx] + ' ' + nature[natureIdx] + ' ' + situation[situationIdx];
+
+		var query = query.replace(/undefined/g, '').replace(/    /g, ' ').replace(/   /g, ' ').replace(/  /g, ' ').trim();
+
+		var url1 = 'https://www.google.com/search?q='+query.replace(/ /g, '+')+'&tbm=vid';
+
+		var currentUrl = window.location.href;
+
+			if (currentUrl.toLowerCase().indexOf('=') > -1) {
+					var url = url1; 
+					// if (currentUrl.toLowerCase().indexOf('google=yes') > -1) {
+					// 		var url = url1; 
+					// } else {
+					// 		var url = url2;
+					// }
+		
+					if (currentUrl.toLowerCase().indexOf('open=newtab') > -1) {
+							window.open(url, target='_blank');
+					} else {
+							window.location.href = url;
+					}
+			}
+
+
+	}
+
+	function loadAllButtons(inpid, confid, outid) {
+		var inputStr = document.getElementById(inpid).value.trim();
+		var inputStrLowerCase = inputStr.toLowerCase();
 		var confDataStr = document.getElementById(confid).value.trim();
 		var confUrlDelim = ' = ';
-		var confDataArr = confDataStr.split('\n');
+		// var confDataArr = confDataStr.split('\n');
+		var cleanConfDataStr = '';
+		for (a=0; a<confDataStr.replace(/\r/g, '').split('\n').length; a++) {
+			var cleanConfDataStr = cleanConfDataStr + confDataStr.replace(/\r/g, '').split('\n')[a].trim() + '\n';
+		}
+
 		var outputElement = document.getElementById(outid);
 
 		outputElement.innerHTML = '';
+		var outputbtns = '';
+		// for (b=0; b<cleanConfDataStr.split('\n\n').length; b++) {
+		for (b=0; b<cleanConfDataStr.split('\n').length; b++) {
+			// var confDataArr = cleanConfDataStr.split('\n\n')[b].split('\n');
+			var confDataArr = cleanConfDataStr.split('\n')[b].split('\n');
+			var newFlag = 1;
+			for (let i=0; i<confDataArr.length; i++) {
+				var currLine = confDataArr[i].trim();
+				if (currLine != '') {
+					var url = currLine.split(confUrlDelim)[1];
+					var title = currLine.split(confUrlDelim)[0];
+					if (newFlag == 1) {
+						var starname = title.split(' ')[0] + ' ' + title.split(' ')[1];
+						newFlag = 0;
+					} else {
+						var starname = ''
+					}
+					var flag = false;
+					var titleLowerCase = ' ' + title.toLowerCase() + ' ';
+					if (inputStrLowerCase != '') {
+						for (w=0; w<inputStrLowerCase.split(' ').length; w++) {
+							if (titleLowerCase.indexOf(' ' + inputStrLowerCase.split(' ')[w] + ' ') > -1 && titleLowerCase.split(':')[1].indexOf(titleLowerCase.split(':')[0].trim()) > -1) {
+								var flag = true;
+							}
+						}
+					} else {
+						var flag = true;
+					}
 
-		for (let i=0; i<confDataArr.length; i++) {
-			var currLine = confDataArr[i].trim();
-			if (currLine != '') {
-				var url = currLine.split(confUrlDelim)[1];
-				var title = currLine.split(confUrlDelim)[0];
-				var starname = title.split(' ')[0] + ' ' + title.split(' ')[1];
+					if (flag == true) {
+						
+						// var outputbtns = outputbtns + '<button style="border:1px solid grey; padding: 3px; border-radius:10px; margin: 3px;" onclick="window.open(\''+url+'\')">'+title+'</button>';
 
-				var name = starname.toLowerCase();
-				var namef = findName(name, collectionName);
+						if (starname.toLowerCase() != '') {
+							var name = starname.toLowerCase();
+							// var namef = findCorrectSpelling(name, collectionName);
+							var namef = name;
 
-				console.log('\nAfter Find Name namef:')
-				console.log('"'+namef+'"')
+							console.log('\nAfter Find Name namef:')
+							console.log('"'+namef+'"')
 
-				if (namef == '') {var namef = findCorrectSpelling(name, collectionName);}
+							// if (namef == '') {var namef = findCorrectSpelling(name, collectionName);}
 
-				var imgsrc = '';
+							var imgsrc = '';
 
-				if (namef in images) {
-					var imgsrc = images[namef];
+							if (namef in images) {
+								var imgsrc = images[namef];
+							} else {
+								var imgsrc = 'https://st.depositphotos.com/1364916/2024/v/950/depositphotos_20247467-stock-illustration-sexy-girl-logo.jpg';
+							}
+							var outputbtns = outputbtns + '<button style="width: 260px; border: 0px solid grey; padding: 3px; border-radius:10px; margin: 3px;" onclick="window.open(\''+url+'\')"><img style="width: 250px; height: auto; height: 370px; display: inline;" src="'+imgsrc+'"/><br>'+title+'</button>';
+							// var outputbtns = outputbtns + '<tr><td><img style="width: 250px; height: auto; height: 370px; display: inline;" src="'+imgsrc+'"></td><td>';
+							// var outputbtns = outputbtns + '<img style="width: 250px; height: auto; height: 370px; display: inline;" src="'+imgsrc+'"/>';
+						}
+
+						// var outputbtns = outputbtns + '<button style="border:1px solid grey; padding: 3px; border-radius:10px; margin: 3px;" onclick="window.open(\''+url+'\')">'+title+'</button><br>';
+					}
 				} else {
-					var imgsrc = 'https://st.depositphotos.com/1364916/2024/v/950/depositphotos_20247467-stock-illustration-sexy-girl-logo.jpg';
+					var outputbtns = outputbtns + '<br>';
 				}
-
-				outputElement.innerHTML = outputElement.innerHTML + '<button style="border: 0px solid grey; padding: 5px;" onclick="window.open(\''+url+'\')"><img style="width: 250px; height: auto; height: 370px;" src="'+imgsrc+'"><br>'+title+'</button>';
+			}
+			if (outputbtns != '') {
+				// var outputbtns = outputbtns + '</td></tr>';
+				// var outputbtns = '<div style="width: 250px; display: inline-block;">' + outputbtns + '</div>';
 			}
 		}
+
+		// outputElement.innerHTML = '<center><table style="width: 50%;">'+outputbtns+'</table></center>';
+		var outputbtns = outputbtns.replace(/<br><br><br><br><br>/g, '<br>').replace(/<br><br><br><br>/g, '<br>').replace(/<br><br><br>/g, '<br>').replace(/<br><br>/g, '<br>')
+		var outputbtns = outputbtns.replace(/<br><br><br><br><br>/g, '<br>').replace(/<br><br><br><br>/g, '<br>').replace(/<br><br><br>/g, '<br>').replace(/<br><br>/g, '<br>')
+		var outputbtns = outputbtns.replace(/<br><br><br><br><br>/g, '<br>').replace(/<br><br><br><br>/g, '<br>').replace(/<br><br><br>/g, '<br>').replace(/<br><br>/g, '<br>')
+		var outputbtns = outputbtns.replace(/<br><br><br><br><br>/g, '<br>').replace(/<br><br><br><br>/g, '<br>').replace(/<br><br><br>/g, '<br>').replace(/<br><br>/g, '<br>')
+		var outputbtns = outputbtns.replace(/<br><br><br><br><br>/g, '<br>').replace(/<br><br><br><br>/g, '<br>').replace(/<br><br><br>/g, '<br>').replace(/<br><br>/g, '<br>')
+		outputElement.innerHTML = '<center>'+outputbtns+'</center>';
 	}
+
+	document.getElementById('inputbox').addEventListener('keypress', (event)=>{
+
+			// event.keyCode or event.which  property will have the code of the pressed key
+			let keyCode = event.keyCode ? event.keyCode : event.which;
+
+			// 13 points the enter key
+			if(keyCode === 13) {
+				// call click function of the buttonn 
+				// if (document.getElementById('categoryid').value == 'celebrity') {celebUpdateUrl();} else {if (document.getElementById('categoryid').value == 'pornstar') {updateUrl();} else {favUpdateUrl();}}
+				updateUrl();
+			}
+		
+		});
 	</script>
+
 
 
 </body></html>
