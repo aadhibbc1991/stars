@@ -4,7 +4,7 @@
 	<meta name="google-site-verification" content="4wKNuHtFJ-JoWYIVzuI6X5-4IVOAdMO4r6DZEDjIL80">
 	<meta name="msvalidate.01" content="3F68EDCC5680D3D2228AD558D1DA07D7">
 	<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;%F0%9F%94%A5&lt;/text&gt;&lt;/svg&gt;">
-	<title>Void Stars</title>
+	<title>Void Stars V0.2</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style type="text/css">
 		html, body {
@@ -1090,16 +1090,17 @@
 		var query = query.replace(/undefined/g, '').replace(/    /g, ' ').replace(/   /g, ' ').replace(/  /g, ' ').trim();
 
 		var url1 = 'https://www.google.com/search?q='+query.replace(/ /g, '+')+'&tbm=vid';
+		var url2 = 'https://mat6tube.com/video/'+query.replace(/ /g, '+')+'&tbm=vid';
 
 		var currentUrl = window.location.href;
 
 			if (currentUrl.toLowerCase().indexOf('=') > -1) {
 					var url = url1; 
-					// if (currentUrl.toLowerCase().indexOf('google=yes') > -1) {
-					// 		var url = url1; 
-					// } else {
-					// 		var url = url2;
-					// }
+					if (currentUrl.toLowerCase().indexOf('google=yes') > -1) {
+							var url = url1; 
+					} else {
+							var url = url2;
+					}
 		
 					if (currentUrl.toLowerCase().indexOf('open=newtab') > -1) {
 							window.open(url, target='_blank');
