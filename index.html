@@ -4,7 +4,7 @@
 	<meta name="google-site-verification" content="4wKNuHtFJ-JoWYIVzuI6X5-4IVOAdMO4r6DZEDjIL80">
 	<meta name="msvalidate.01" content="3F68EDCC5680D3D2228AD558D1DA07D7">
 	<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;%F0%9F%94%A5&lt;/text&gt;&lt;/svg&gt;">
-	<title>Void Stars V0.5</title>
+	<title>Void Stars V0.6</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style type="text/css">
 		html, body {
@@ -451,6 +451,8 @@
 			}
 			return score
 		}
+// 				     ['DOB', 'Place Of Birth', 'Ethnicity', 'Weight', 'Breast Size', 'Boobs Nature', 'Gender', 'Tattoo', 'Piercing', 'Build']
+		var matchWeightage = [6,      1,                4.5,           1,        1,             1,              3,        1,        1,          1];
 
 		function cosineSimilarity(inputVec) {
 			// var inpSum = 0
@@ -460,12 +462,18 @@
 			score = {}
 			var n = 0;
 
+			// Applying Weights to the input Vector
+			for (mw=0; mw<matchWeightage.length; mw++) {inputVec[mw] = inputVec[mw] * matchWeightage[mw];}
+
 			for (k in vectorsAll) {
 				var compareVec = vectorsAll[k];
 
 				// var comSum = 0
 				// for (b=0; b<compareVec.length; b++) { var comSum = comSum + compareVec[b];}
 				// var comMean = comSum/compareVec.length;
+
+				// Applying Weights to the compare Vector
+				for (cmw=0; cmw<matchWeightage.length; cmw++) {compareVec[cmw] = compareVec[cmw] * matchWeightage[cmw];}
 
 				var num = 0; var den1 = 0; var den2 = 0;
 				for (i=0; i<inputVec.length; i++) {
