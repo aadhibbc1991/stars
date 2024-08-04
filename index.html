@@ -148,6 +148,7 @@
 <div id="mainBody" style="display: none;">
 <!-- 	<h2><a style="font-size: 200%;">🔥</a><u>Stars4U</u></h2> -->
 	<h2><a style="font-size: 200%;">🔥</a>Stars4U</h2>
+	<div id="headerElements">
 	<input type="search" id="inputbox" style="width: 375px;" placeholder="Search Query...">
 	<select id="sufix" placeholder="channels" onchange="updateUrl()">
 		<option value=""></option>
@@ -248,6 +249,7 @@
 	</select>
 	<!-- <input type="button" value="Search" onclick="if (document.getElementById('categoryid').value == 'celebrity') {celebUpdateUrl();}; if (document.getElementById('categoryid').value == 'pornstar') {updateUrl();}; if (document.getElementById('categoryid').value == 'favorite') {favUpdateUrl();}; if (document.getElementById('categoryid').value == 'random') {randomUpdateUrl();}"/> -->
 	<input type="button" value="Search" onclick="updateUrl()">
+	
 	<textarea id="confdata" style="display: none;">		ariella ferrera : ariella ferrera tasty stepmom = https://void-web-search-app.vercel.app/search/ariella+ferrera+tasty+stepmom
 		ariella ferrera : ariella ferrera horny guy spying on busty step mother = https://void-web-search-app.vercel.app/search/ariella+ferrera+horny+guy+spying+on+busty+step+mother
 		ariella ferrera : ariella ferrera better swallow some evidence = https://void-web-search-app.vercel.app/search/ariella+ferrera+better+swallow+some+evidence
@@ -312,6 +314,7 @@
 	</div></center>
 <!-- 	</form> -->
 	<div id="suggestiondiv" class="suggestions"></div>
+	</div> <!-- headerElement Close -->
 	<div id="outputdiv" class="out">
 		
 	<div id="sitescontainer" style="display: none;">
@@ -797,6 +800,8 @@
 			var currUrl = currUrl.replace(/\=porn\&/g, '=pornstar&');
 			var currUrl = currUrl.replace(/\=prn\&/g, '=pornstar&');
 			var currUrl = currUrl.replace(/\=ps\&/g, '=pornstar&');
+
+			var currUrl = currUrl.replace(/\=mn\&/g, '=main&');
 			
 			var currUrl = currUrl.replace(/\=celeb\&/g, '=celebrity&');
 			var currUrl = currUrl.replace(/\=cb\&/g, '=celebrity&');
@@ -836,6 +841,8 @@
 			var currUrl = currUrl.replace(/\?s=/g, '?search=').replace(/\&s=/g, '&search=');
 			var currUrl = currUrl.replace(/\?g=/g, '?group=').replace(/\&g=/g, '&group=');
 			var currUrl = currUrl.replace(/\?c=/g, '?cat=').replace(/\&c=/g, '&cat=');
+			var currUrl = currUrl.replace(/\?disp=/g, '?display=').replace(/\&disp=/g, '&display=');
+			var currUrl = currUrl.replace(/\?d=/g, '?display=').replace(/\&d=/g, '&display=');
 			var currUrl = currUrl.replace(/&([^&]*)$/, '$1')
 			console.log('currUrl: '+ currUrl);
 
@@ -858,6 +865,15 @@
 				
 				// var url = currUrl.split('url=')[1].split('&')[0].replace(/\+/g, ' ').trim();
 				var url = currUrl.split('url=')[1];
+				// document.getElementById('inputbox').value = name;
+				// alert('Arg Url => '+url);
+				urlUnblock(url);
+			}
+
+			if (currUrl.indexOf('?') > -1 && currUrl.indexOf('display=') > -1) {
+				
+				var displayValue = currUrl.split('display=')[1];
+				if (displayValue.toLowerCase().trim() == 'main') {document.getElementById('headerElements').style.display='none';}
 				// document.getElementById('inputbox').value = name;
 				// alert('Arg Url => '+url);
 				urlUnblock(url);
