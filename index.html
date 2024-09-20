@@ -1,3 +1,4 @@
+<!-- Version 2.0 -->
 <!DOCTYPE html>
 <!-- saved from url=(0014)about:internet -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -311,7 +312,7 @@
 		<input style="position: fixed; bottom: 0px; left: 0px;" type="button" value="Websites" onclick="if (document.getElementById('sitescontainer2').style.display != 'block') {document.getElementById('sitescontainer2').style.display = 'block'} else {document.getElementById('sitescontainer2').style.display = 'none'}"/>
 
 	</div></center>
-<!-- 	</form> -->
+	<!-- 	</form> -->
 	<div id="suggestiondiv" class="suggestions">
 
 	</div>
@@ -1050,108 +1051,101 @@ function nameImages() {
 		}
 
 	function redirectToRandomFavUrl(confid) {
-		// // get fav data
-		// // var confDataStr = document.getElementById(confid).value.trim();
-		// var inputBoxValue = document.getElementById('inputbox').value.trim();
-		// // var confDataStrTmp = phdata;
-		// var confDataStrTmp = document.getElementById(confid).value.trim();
-
-		// // standardize the data in the conf textarea
-		// for (l=0; l<confDataStrTmp.split('\n').length; l++) {
-		// 	// for every line in the data trim the line
-		// 	var confDataStrTmpCur = confDataStrTmp.split('\n')[l];
-		// 	var confDataStrTmpCurr = confDataStrTmp.split('\n')[l].trim();
-		// 	if (confDataStrTmpCurr != '') {
-		// 		if (confDataStrTmpCurr.split(':')[1].toLowerCase().indexOf(confDataStrTmpCurr.split(':')[0].toLowerCase()) > -1) {
-		// 			var confDataStr = confDataStr + '\n' + confDataStrTmpCur;
-		// 		}
-		// 	} else {
-		// 		var confDataStr = confDataStr + '\n';
-		// 	}
-		// }
-
-		// // filter the urls with values
-		// if (inputBoxValue != '') {
-		// 	console.log('inputBox data found as:\n' + inputBoxValue);
-		// 	var confDataStrOut = '';
-		// 	for (ls=0; ls<confDataStr.split('\n').length; ls++) {
-		// 		var flag = true;
-		// 		for (is=0; is<inputBoxValue.trim().split(' ').length; is++) {
-		// 			var word = inputBoxValue.trim().split(' ')[is];
-		// 			if (confDataStr.split('\n')[ls].indexOf(word) <= -1) {var flag = false;}
-		// 		}
-		// 		if (flag == true) {var confDataStrOut = confDataStrOut + confDataStr.split('\n')[ls] + '\n';}
-		// 	}
-		// 	var confDataStr = confDataStrOut.trim();
-		// 	console.log('output urls:\n' + confDataStr);
-		// }
-
-		// var confDataStr = confDataStr.trim();
-
-		// var urls = '';
-
-		// // clean the data
-		// for (let l=0; l<confDataStr.split('\n').length; l++) {
-		// 	if (confDataStr.split('\n')[l].trim() != '') {var urls = urls + confDataStr.split('\n')[l].split(' = ')[confDataStr.split('\n')[l].split(' = ').length - 1].trim() + '\n';}
-		// }
-		// var urls = urls.trim();
-		// if (urls == '' || urls == undefined) {alert('There Were No URLs Found For This Criteria'); return}
-		// console.log('urls:');
-		// console.log(urls);
-
-		// // random number between 0 to last index number of url
-		// let i = Math.floor(Math.random() * (urls.split('\n').length - 1));
-		// console.log('')
-		// console.log('i: '+i)
-
-		// // select the random url
-		// var url = urls.split('\n')[i].trim();
-
-		// // open the url
-		// window.open(url, target='_blank');
+		// get fav data
+		// var confDataStr = document.getElementById(confid).value.trim();
+		var inputBoxValue = document.getElementById('inputbox').value.trim();
+		// var confDataStrTmp = phdata;
+		var confDataStrTmp = document.getElementById(confid).value.trim();
+// standardize the data in the conf textarea
+		for (l=0; l<confDataStrTmp.split('\n').length; l++) {
+			// for every line in the data trim the line
+			var confDataStrTmpCur = confDataStrTmp.split('\n')[l];
+			var confDataStrTmpCurr = confDataStrTmp.split('\n')[l].trim();
+			if (confDataStrTmpCurr != '') {
+				if (confDataStrTmpCurr.split(':')[1].toLowerCase().indexOf(confDataStrTmpCurr.split(':')[0].toLowerCase()) > -1) {
+					var confDataStr = confDataStr + '\n' + confDataStrTmpCur;
+				}
+			} else {
+				var confDataStr = confDataStr + '\n';
+			}
+		}
+// filter the urls with values
+		if (inputBoxValue != '') {
+			console.log('inputBox data found as:\n' + inputBoxValue);
+			var confDataStrOut = '';
+			for (ls=0; ls<confDataStr.split('\n').length; ls++) {
+				var flag = true;
+				for (is=0; is<inputBoxValue.trim().split(' ').length; is++) {
+					var word = inputBoxValue.trim().split(' ')[is];
+					if (confDataStr.split('\n')[ls].indexOf(word) <= -1) {var flag = false;}
+				}
+				if (flag == true) {var confDataStrOut = confDataStrOut + confDataStr.split('\n')[ls] + '\n';}
+			}
+			var confDataStr = confDataStrOut.trim();
+			console.log('output urls:\n' + confDataStr);
+		}
+var confDataStr = confDataStr.trim();
+var urls = '';
+// clean the data
+		for (let l=0; l<confDataStr.split('\n').length; l++) {
+			if (confDataStr.split('\n')[l].trim() != '') {var urls = urls + confDataStr.split('\n')[l].split(' = ')[confDataStr.split('\n')[l].split(' = ').length - 1].trim() + '\n';}
+		}
+		var urls = urls.trim();
+		if (urls == '' || urls == undefined) {alert('There Were No URLs Found For This Criteria'); return}
+		console.log('urls:');
+		console.log(urls);
+// random number between 0 to last index number of url
+		var i = Math.floor(Math.random() * (urls.split('\n').length - 1));
+		if (i<0) {var i = 0;}
+		console.log('')
+		console.log('i: '+i)
+// select the random url
+		var url = urls.split('\n')[i].trim();
+// open the url
+		window.open(url, target='_blank');
 
 
 		// NEW LOGIC
 
-		var starNames = ["Alexis Fawx", "Ariella Ferrera", "Aubrey Black", "Ava Addams", "Brandi Love", "Brooklyn Chase", "Bridgette B", "Britney Amber", "Carmen Valentina", "Cherie DeVille", "Coco Vandi", "Crystal Rush", "Danica Dillon", "Destiny Dixon", "Diamond Foxxx", "Heather Vahn", "India Summer", "Jessa Rhodes", "Jewels Jade", "Jodi West", "Julia Ann", "Kendra Lust", "Krissy Lynn", "Lisa Ann", "Lexi Luna", "Nicole Aniston", "Nikki Brooks", "Nina Elle", "Phoenix Marie", "Rachael Cavalli", "Raven Hart", "Reagan Foxx", "Shay Fox", "Tanya Tate", "Tegan James", "Veronica Avluv", "", "Adria Rae", "Dillion Harper", "Janice Griffith", "Athena Faris", "Jordi", "James Deen", "India", "Desi"];
-		var relation1 = ['mom', 'stepmom', 'milf'];
-		var relation2 = ['', 'son', 'daughter', 'sister']
-		// var nature = ['', 'homemade', 'real'];
-		var nature = ["spankbang", "sexpod", "pornzog", "milffox", "incestflix", "pussyspace", "mat6tube", "bigfuck", "4tube", "hqporner", "bustybus", "youporn", "pornone", "xnxx.health", "xvideos2.uk"];
-		var situation = ['', 'gangbang', 'party', 'threesome', 'foursome', 'blowjob', 
-			'double penetration', 'cuckold', 'mothers day'];
-		var numOfUrls = starNames.length * relation1.length * relation2.length * nature.length * situation.length;
+		// var starNames = ["Alexis Fawx", "Ariella Ferrera", "Aubrey Black", "Ava Addams", "Brandi Love", "Brooklyn Chase", "Bridgette B", "Britney Amber", "Carmen Valentina", "Cherie DeVille", "Coco Vandi", "Crystal Rush", "Danica Dillon", "Destiny Dixon", "Diamond Foxxx", "Heather Vahn", "India Summer", "Jessa Rhodes", "Jewels Jade", "Jodi West", "Julia Ann", "Kendra Lust", "Krissy Lynn", "Lisa Ann", "Lexi Luna", "Nicole Aniston", "Nikki Brooks", "Nina Elle", "Phoenix Marie", "Rachael Cavalli", "Raven Hart", "Reagan Foxx", "Shay Fox", "Tanya Tate", "Tegan James", "Veronica Avluv", "", "Adria Rae", "Dillion Harper", "Janice Griffith", "Athena Faris", "Jordi", "James Deen", "India", "Desi"];
+		// var relation1 = ['mom', 'stepmom', 'milf'];
+		// var relation2 = ['', 'son', 'daughter', 'sister']
+		// // var nature = ['', 'homemade', 'real'];
+		// var nature = ["spankbang", "sexpod", "pornzog", "milffox", "incestflix", "pussyspace", "mat6tube", "bigfuck", "4tube", "hqporner", "bustybus", "youporn", "pornone", "xnxx.health", "xvideos2.uk"];
+		// var situation = ['', 'gangbang', 'party', 'threesome', 'foursome', 'blowjob', 
+			// 'double penetration', 'cuckold', 'mothers day'];
+		// var numOfUrls = starNames.length * relation1.length * relation2.length * nature.length * situation.length;
+ 
+		// var starNameIdx = Math.floor(Math.random()*starNames.length) - 1;
+		// var relation1Idx = Math.floor(Math.random()*relation1.length) - 1;
+		// var relation2Idx = Math.floor(Math.random()*relation2.length) - 1;
+		// var natureIdx = Math.floor(Math.random()*nature.length) - 1;
+		// // var natureIdx = 0;
+		// var situationIdx = Math.floor(Math.random()*situation.length) - 1;
 
-		var starNameIdx = Math.floor(Math.random()*starNames.length) - 1;
-		var relation1Idx = Math.floor(Math.random()*relation1.length) - 1;
-		var relation2Idx = Math.floor(Math.random()*relation2.length) - 1;
-		var natureIdx = Math.floor(Math.random()*nature.length) - 1;
-		// var natureIdx = 0;
-		var situationIdx = Math.floor(Math.random()*situation.length) - 1;
-		
-		var query = starNames[starNameIdx] + ' ' + relation1[relation1Idx] + ' ' + relation2[relation2Idx] + ' ' + situation[situationIdx] + ' ' + nature[natureIdx];
+		// var query = starNames[starNameIdx] + ' ' + relation1[relation1Idx] + ' ' + relation2[relation2Idx] + ' ' + situation[situationIdx] + ' ' + nature[natureIdx];
 
-		var query = query.replace(/undefined/g, '').replace(/    /g, ' ').replace(/   /g, ' ').replace(/  /g, ' ').trim();
+		// var query = query.replace(/undefined/g, '').replace(/    /g, ' ').replace(/   /g, ' ').replace(/  /g, ' ').trim();
 
-		var url1 = 'https://www.google.com/search?q='+query.replace(/ /g, '+')+'&tbm=vid&igu=1';
-		var url2 = 'https://void-web-search-app.vercel.app/search/'+query.replace(/ /g, '+');
+		// var url1 = 'https://www.google.com/search?q='+query.replace(/ /g, '+')+'&tbm=vid&igu=1';
+		// var url2 = 'https://void-web-search-app.vercel.app/search/'+query.replace(/ /g, '+');
 
-		var currentUrl = window.location.href;
+		// var currentUrl = window.location.href;
 
-			if (currentUrl.toLowerCase().indexOf('=') > -1) {
-					var url = url1; 
-					if (currentUrl.toLowerCase().indexOf('google=yes') > -1) {
-							var url = url1; 
-					} else {
-							var url = url2;
-					}
-		
-					if (currentUrl.toLowerCase().indexOf('open=newtab') > -1) {
-							window.open(url, target='_blank');
-					} else {
-							window.location.href = url;
-					}
-			}
+			// if (currentUrl.toLowerCase().indexOf('=') > -1) {
+					// var url = url1; 
+					// if (currentUrl.toLowerCase().indexOf('google=yes') > -1) {
+							// var url = url1; 
+					// } else {
+							// var url = url2;
+					// }
+
+					// if (currentUrl.toLowerCase().indexOf('open=newtab') > -1) {
+							// window.open(url, target='_blank');
+					// } else {
+							// window.location.href = url;
+					// }
+			// }
 
 
 	}
